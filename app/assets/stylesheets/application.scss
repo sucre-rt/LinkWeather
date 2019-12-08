@@ -1,0 +1,126 @@
+@import "./reset";
+@import "font-awesome";
+
+
+header {
+  width: 100vw;
+  height: 130px;
+  position: relative;
+  background: image-url('sky.jpg');
+  background-size: cover;
+  .logo-box {
+      max-width: 120px;
+      max-height: 120px;
+      margin: 0 20px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    .logo-img {
+      max-width: 120px;
+      max-height: 120px;
+      line-height: 130px;
+    }
+  }
+  .header-right {
+    position: absolute;
+    right: 0;
+    .search-box {
+      margin: 20px 20px 10px 20px;
+      position: relative;
+      .area-search {
+        height: 35px;
+        width: 300px;
+        color: #504946;
+        font-size: 18px;
+        border-radius: 5px;
+        &::placeholder {
+          color: #b4aeb1;
+        }
+      }
+      .search-btn {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 37px;
+        width: 35px;
+        text-align: center;
+        cursor: pointer;
+        .fa-search {
+          font-size: 20px;
+          line-height: 37px;
+          color: #504946;
+        }
+      }
+    }
+    .header-right-under {
+      display: flex;
+      justify-content: flex-end;
+      .tweet-box {
+        display: inline-block;
+        clear: both;
+        height: 40px;
+        width: 180px;
+        border: solid #f39800;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 40px;
+        background: #fef9fb;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+        position: relative;
+        a {
+          color: #f39800;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 14px;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          &:hover {
+            color: #fef9fb;
+          }
+        }
+        &:hover {
+          background-color: #f6ae54;
+          box-shadow: none;
+          margin-top: 4px;
+        }
+      }
+      .setting-box{
+        height: 50px;
+        width: 50px;
+        margin: 0 25px 0 20px;
+        position: relative;
+        .setting-btn {
+          .fa-cog {
+            font-size: 55px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            color: #d3d6dd;
+          }
+          p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            color: #24140e;
+          }
+          &:hover {
+            .fa-cog {
+              color: #736d71;
+            }
+            p {
+              color: #000000;
+            }
+          }
+        }
+      }
+    }
+  }
+}

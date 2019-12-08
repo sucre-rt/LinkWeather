@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LinkWeather</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-box">
+        <%= link_to "#" do %>
+          <%= image_tag 'logo.png', class: "logo-img" %>
+        <% end %>
+      </div>
+      <div class="header-right">
+        <div class="search-box">
+          <input class="area-search" placeholder="天気を確認したい地域を入力">
+          <div class="search-btn">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <div class="header-right-under">
+          <div class="tweet-box">
+            <%= link_to "Let's sharing wether!", "#" %>
+          </div>
+          <div class="setting-box">
+            <div class="setting-btn">
+              <i class="fa fa-cog"></i>
+              <p>設定</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>
