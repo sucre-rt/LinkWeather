@@ -2,11 +2,6 @@
 <%= @now %>
 
 <p><%= @today %> 0:00:00</p>
-<% @result["list"].each do |result| %>
-  <% if result["dt_txt"] == "#{@today} 12:00:00" %>
-    <%= result["weather"] %>
-  <% end %>
-<% end %>
 <p><%= @today %> 3:00:00</p>
 <p><%= @today %> 6:00:00</p>
 <p><%= @today %> 9:00:00</p>

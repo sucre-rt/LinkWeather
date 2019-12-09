@@ -3,7 +3,6 @@ class WeathersController < ApplicationController
   require 'uri'
   require 'json'
   require 'date'
-  
   def index
     # gon.api_key = Rails.application.credentials.open_wether[:api_key]
     api_key = Rails.application.credentials.open_wether[:api_key]
@@ -12,8 +11,8 @@ class WeathersController < ApplicationController
     uri = URI.parse("http://api.openweathermap.org/data/2.5/forecast?q=#{city},jp&units=metric&APPID=#{api_key}")
     json = Net::HTTP.get(uri)
     @result = JSON.parse(json)
+    @result = @result["list"]
     @today = Date.today
     @now = DateTime.now
   end
-
 end
