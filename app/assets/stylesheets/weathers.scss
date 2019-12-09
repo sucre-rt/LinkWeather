@@ -1,3 +1,22 @@
-// Place all the styles related to the weathers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.weather-box {
+  width: 70%;
+  overflow-x: auto;
+  white-space: nowrap;
+  &__time-box {
+    width: 25%;
+    display:inline-block;
+    text-align: center;
+    vertical-align: top;
+    .information {
+      margin: 0 auto;
+      display: inline-block;
+      text-align: left;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
