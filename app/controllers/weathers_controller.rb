@@ -3,6 +3,7 @@ class WeathersController < ApplicationController
   require 'uri'
   require 'json'
   require 'date'
+
   def index
     # gon.api_key = Rails.application.credentials.open_wether[:api_key]
     api_key = Rails.application.credentials.open_wether[:api_key]

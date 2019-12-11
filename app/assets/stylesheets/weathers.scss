@@ -1,9 +1,19 @@
+
+.now-weather-information {
+  width: 60%;
+  text-align: center;
+  .now-icon {
+    height: 150px;
+    width: 150px;
+  }
+}
+
 .weather-box {
-  width: 70%;
+  width: 60%;
   overflow-x: auto;
   white-space: nowrap;
   &__time-box {
-    width: 25%;
+    width:30%;
     display:inline-block;
     text-align: center;
     vertical-align: top;
