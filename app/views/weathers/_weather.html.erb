@@ -1,0 +1,16 @@
+<% @result_li.each do |result| %>
+  <% if Time.parse(result["dt_txt"]) + 9.hours == day_time %>
+    <div class="weather-box__time-box">
+      <p class="text-center information-date"><%= day %></p>
+      <p class="text-center information-time"><%= time %></p>
+      <div class="information">
+        <%= image_tag "http://openweathermap.org/img/w/#{result["weather"][0]['icon']}.png ", class: "text-center weather-icon" %>
+        <p class="main-weather">天気：<%= result['weather'][0]['description'] %></p>
+        <p class="max-temp">最高気温：<%= result['main']['temp_max'] %>℃</p>
+        <p class="min-temp">最低気温：<%= result['main']['temp_min'] %>℃</p>
+        <p class="humidity">湿度：<%= result['main']['humidity'] %>％</p>
+        <p class="wind">風速：<%= result['wind']['speed'] %>m</p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

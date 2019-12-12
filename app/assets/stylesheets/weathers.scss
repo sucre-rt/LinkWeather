@@ -1,3 +1,63 @@
-// Place all the styles related to the weathers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main {
+  background-color: #fffff9;
+  min-height: calc(100vh - 230px);
+  .city-weather {
+    width: 60%; 
+    .forecast-area {
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+    .now-weather-information {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      padding: 20px 10px;
+      .main-left {
+        width: 33%;
+        .discomfort {
+          font-size: 45px;
+        }
+      }
+      .main-center {
+        width: 34%;
+        .now-icon {
+          height: 150px;
+          width: 150px;
+        }
+      }
+      .main-right {
+        width: 33%;
+      }
+    }
+    
+    .weather-box {
+      width: 93%;
+      overflow-x: auto;
+      white-space: nowrap;
+      margin: 1em 10px;
+      padding: 1em;
+      background-color: #fff8e1;
+      border: dashed 3px #ffc107;
+      box-shadow: 0 0 0 10px #fff8e1;
+      border-radius: 5px;
+      &__time-box {
+        width:30%;
+        display:inline-block;
+        text-align: center;
+        vertical-align: top;
+        .information {
+          margin: 0 auto;
+          display: inline-block;
+          text-align: left;
+        }
+      }
+    }    
+  }
+}
+
+.text-center {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
