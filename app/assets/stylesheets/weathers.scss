@@ -2,7 +2,12 @@
   background-color: #fffff9;
   min-height: calc(100vh - 230px);
   .city-weather {
-    width: 60%;
+    width: 60%; 
+    .forecast-area {
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
     .now-weather-information {
       width: 100%;
       text-align: center;

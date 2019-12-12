@@ -18,10 +18,14 @@
       </div>
       <div class="header-right">
         <div class="search-box">
-          <input class="area-search" placeholder="天気を確認したい地域を入力">
-          <div class="search-btn">
-            <i class="fa fa-search"></i>
-          </div>
+          <%= form_with url: weathers_path, method: :post, local: true do |f| %>
+            <%= f.text_field :city, class: "area-search", placeholder: "天気を確認したい地域を入力" %>
+            <div class="search-btn">
+              <%= button_tag type: "submit" do %>
+                <i class="fa fa-search"></i>
+              <% end %>
+            </div>
+          <% end %>
         </div>
         <div class="header-right-under">
           <div class="tweet-box">

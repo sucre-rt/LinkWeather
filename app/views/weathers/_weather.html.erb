@@ -1,4 +1,4 @@
-<% @result.each do |result| %>
+<% @result_li.each do |result| %>
   <% if Time.parse(result["dt_txt"]) + 9.hours == day_time %>
     <div class="weather-box__time-box">
       <p class="text-center information-date"><%= day %></p>

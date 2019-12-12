@@ -48,10 +48,15 @@ header {
         width: 35px;
         text-align: center;
         cursor: pointer;
-        .fa-search {
-          font-size: 20px;
-          line-height: 37px;
-          color: #504946;
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          .fa-search {
+            font-size: 20px;
+            line-height: 37px;
+            color: #504946;
+          }
         }
       }
     }
