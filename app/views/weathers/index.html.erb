@@ -1,49 +1,52 @@
+<div class="main">
+  <div class="city-weather">
+    <div class="now-weather-information">
+      <div class="main-left">
+        <h3>不快指数</h3>
+        <p class="discomfort"></p>
+        <p class="description"></p>
+      </div>
+      <div class="main-center">
+        <p class="now-date"></p>
+        <p class="on-time"></p>
+        <%= image_tag "", class: "now-icon" %>
+        <p class="now-weather"></p>
+      </div>
+      <div class="main-right">
+        <p class="now-temp-max"></p>
+        <p class="now-temp-min"></p>
+        <p class="now-humidity"></p>
+        <p class="now-wind"></p>
+      </div>
+    </div>
 
-<div class="now-weather-information">
-  <div class="main-left">
-    <h3>不快指数</h3>
-    <p class="discomfort"></p>
-    <p class="description"></p>
+    <div class="weather-box">
+      <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 0, 00, 00), time: "0:00:00", day: @today }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 3, 00, 00), time: "3:00:00", day: @today }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 6, 00, 00), time: "6:00:00", day: @today }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 9, 00, 00), time: "9:00:00", day: @today }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 12, 00, 00), time: "12:00:00", day: @today }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 15, 00, 00), time: "15:00:00", day: @today }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 18, 00, 00), time: "18:00:00", day: @today }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 21, 00, 00), time: "21:00:00", day: @today }%>
+
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 0, 00, 00), time: "0:00:00", day: @today + 1.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 3, 00, 00), time: "3:00:00", day: @today + 1.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 6, 00, 00), time: "6:00:00", day: @today + 1.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 9, 00, 00), time: "9:00:00", day: @today + 1.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 12, 00, 00), time: "12:00:00", day: @today + 1.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 15, 00, 00), time: "15:00:00", day: @today + 1.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 18, 00, 00), time: "18:00:00", day: @today + 1.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 21, 00, 00), time: "21:00:00", day: @today + 1.day }%>
+
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 0, 00, 00), time: "0:00:00", day: @today + 2.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 3, 00, 00), time: "3:00:00", day: @today + 2.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 6, 00, 00), time: "6:00:00", day: @today + 2.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 9, 00, 00), time: "9:00:00", day: @today + 2.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 12, 00, 00), time: "12:00:00", day: @today + 2.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 15, 00, 00), time: "15:00:00", day: @today + 2.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 18, 00, 00), time: "18:00:00", day: @today + 2.day }%>
+      <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 21, 00, 00), time: "21:00:00", day: @today + 2.day }%>
+    </div>
   </div>
-  <div class="main-center">
-    <p class="now-date"></p>
-    <p class="on-time"></p>
-    <%= image_tag "", class: "now-icon" %>
-  </div>
-  <div class="main-right">
-    <p class="now-weather"></p>
-    <p class="now-temp-max"></p>
-    <p class="now-temp-min"></p>
-    <p class="now-humidity"></p>
-    <p class="now-wind"></p>
-  </div>
-</div>
-
-<div class="weather-box">
-  <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 0, 00, 00), time: "0:00:00", day: @today }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 3, 00, 00), time: "3:00:00", day: @today }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 6, 00, 00), time: "6:00:00", day: @today }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 9, 00, 00), time: "9:00:00", day: @today }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 12, 00, 00), time: "12:00:00", day: @today }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 15, 00, 00), time: "15:00:00", day: @today }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 18, 00, 00), time: "18:00:00", day: @today }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 21, 00, 00), time: "21:00:00", day: @today }%>
-
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 0, 00, 00), time: "0:00:00", day: @today + 1.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 3, 00, 00), time: "3:00:00", day: @today + 1.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 6, 00, 00), time: "6:00:00", day: @today + 1.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 9, 00, 00), time: "9:00:00", day: @today + 1.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 12, 00, 00), time: "12:00:00", day: @today + 1.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 15, 00, 00), time: "15:00:00", day: @today + 1.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 18, 00, 00), time: "18:00:00", day: @today + 1.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 1.day).year, (@today + 1.day).month, (@today + 1.day).day, 21, 00, 00), time: "21:00:00", day: @today + 1.day }%>
-
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 0, 00, 00), time: "0:00:00", day: @today + 2.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 3, 00, 00), time: "3:00:00", day: @today + 2.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 6, 00, 00), time: "6:00:00", day: @today + 2.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 9, 00, 00), time: "9:00:00", day: @today + 2.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 12, 00, 00), time: "12:00:00", day: @today + 2.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 15, 00, 00), time: "15:00:00", day: @today + 2.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 18, 00, 00), time: "18:00:00", day: @today + 2.day }%>
-  <%= render partial: 'weather', locals: { day_time: Time.local((@today + 2.day).year, (@today + 1.day).month, (@today + 2.day).day, 21, 00, 00), time: "21:00:00", day: @today + 2.day }%>
 </div>
