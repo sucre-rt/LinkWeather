@@ -1,6 +1,7 @@
 @import "./reset";
 @import "font-awesome";
 @import "./weathers";
+@import "./users";
 
 
 header {
@@ -29,6 +30,7 @@ header {
     .search-box {
       margin: 20px 20px 10px 20px;
       position: relative;
+      text-align: right;
       .area-search {
         height: 35px;
         width: 300px;
@@ -65,7 +67,6 @@ header {
       justify-content: flex-end;
       .tweet-box {
         display: inline-block;
-        clear: both;
         height: 40px;
         width: 180px;
         border: solid #f39800;
@@ -92,6 +93,62 @@ header {
           background-color: #f6ae54;
           box-shadow: none;
           margin-top: 4px;
+        }
+      }
+      .mypage-box {
+        display: inline-block;
+        height: 40px;
+        width: 90px;
+        border: solid #bd6856;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 40px;
+        background: #fdede4;
+        position: relative;
+        margin: 4px 0 0 15px;
+        a {
+          color: #bd6856;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 14px;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          &:hover {
+            color: #fdede4;
+          }
+        }
+        &:hover {
+          background-color: #bd6856;
+        }
+      }
+      .logout-box {
+        display: inline-block;
+        height: 40px;
+        width: 90px;
+        border: solid #504946;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 40px;
+        background: #d3d6dd;
+        position: relative;
+        margin: 4px 0 0 15px;
+        a {
+          color: #504946;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 14px;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          &:hover {
+            color: #fef9fb;
+          }
+        }
+        &:hover {
+          background-color: #504946;
         }
       }
       .setting-box{
@@ -126,6 +183,37 @@ header {
             }
           }
         }
+      }
+      .session-box {
+        margin-right: 20px;
+        .login-box, .signup-box {
+          display: inline-block;
+          height: 40px;
+          width: 90px;
+          border: solid #bd6856;
+          border-radius: 5px;
+          text-align: center;
+          line-height: 40px;
+          background: #fdede4;
+          position: relative;
+          margin: 4px 0 0 15px;
+          a {
+            color: #bd6856;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            &:hover {
+              color: #fdede4;
+            }
+          }
+          &:hover {
+            background-color: #bd6856;
+          }
+          }
       }
     }
   }

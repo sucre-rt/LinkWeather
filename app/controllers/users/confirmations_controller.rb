@@ -1,20 +1,32 @@
-class WeathersController < ApplicationController
-  require 'net/http'
-  require 'uri'
-  require 'json'
-  require 'date'
+# frozen_string_literal: true
 
-  def index
-    if search_params[:city].blank?
-      @area = ""
+class Users::ConfirmationsController < Devise::ConfirmationsController
+  # GET /resource/confirmation/new
+  # def new
+  #   super
+  # end
+
+  # POST /resource/confirmation
+  # def create
+  #   super
+  # end
+
+  def show
+    if current_user.my_area.blank?
+      @area = "東京都"
+      area_result = set_area(@area)
+      lon, lat = area_result['Feature'][0]['Geometry']['Coordinates'].split(',')
+      @result = get_weather(lat, lon)
+      @result_li = @result["list"]
+      @today = Date.today
+      @now = DateTime.now
     else
-      @area = search_params[:city]
+      @area = current_user.my_area
       area_result = set_area(@area)
       unless area_result["ResultInfo"]["Count"] == 0
         lon, lat = area_result['Feature'][0]['Geometry']['Coordinates'].split(',')
         @result = get_weather(lat, lon)
         @result_li = @result["list"]
-        @area = search_params[:city]
         @today = Date.today
         @now = DateTime.now
       else
@@ -23,7 +35,7 @@ class WeathersController < ApplicationController
     end
   end
 
-  private
+  protected
 
   def set_area(area)
     client_id = Rails.application.credentials.yahoo[:client_id]
@@ -39,7 +51,13 @@ class WeathersController < ApplicationController
     JSON.parse(json)
   end
 
-  def search_params
-    params.permit(:city)
-  end
+  # The path used after resending confirmation instructions.
+  # def after_resending_confirmation_instructions_path_for(resource_name)
+  #   super(resource_name)
+  # end
+
+  # The path used after confirmation.
+  # def after_confirmation_path_for(resource_name, resource)
+  #   super(resource_name, resource)
+  # end
 end
