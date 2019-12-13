@@ -4,11 +4,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations',
     passwords: 'users/passwords',
-    confirmations: 'users/confirmations'
   }
 
   devise_scope :user do
-    get "users/:id", :to => "users/confirmations#show"
+    get "mypage/:id", :to => "users/confirmations#show", as: 'mypage'
     get "profile_edit", :to => "users/registrations#profile_edit", as: 'profile_edit'
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end

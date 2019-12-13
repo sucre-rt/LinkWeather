@@ -31,14 +31,31 @@
           <div class="tweet-box">
             <%= link_to "Let's sharing wether!", "#" %>
           </div>
-          <div class="setting-box">
-            <div class="setting-btn">
-              <%= link_to profile_edit_path do %>
-                <i class="fa fa-cog"></i>
-                <p>設定</p>
-              <% end %>
+          <% if user_signed_in? %>
+            <div class="mypage-box">
+              <%= link_to "my page", mypage_path(current_user) %>
             </div>
-          </div>
+            <div class="logout-box">
+              <%= link_to "logout", destroy_user_session_path, method: :delete %>
+            </div>
+            <div class="setting-box">
+              <div class="setting-btn">
+                <%= link_to profile_edit_path do %>
+                  <i class="fa fa-cog"></i>
+                  <p>設定</p>
+                <% end %>
+              </div>
+            </div>
+          <% else%>
+            <div class="session-box">
+              <div class="login-box">
+                <%= link_to "login", new_user_session_path %>
+              </div>
+              <div class="signup-box">
+                <%= link_to "signup", new_user_registration_path %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </header>
