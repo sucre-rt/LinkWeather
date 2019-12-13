@@ -1,0 +1,74 @@
+* {
+  color: #504946; 
+}
+.title {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+}
+
+.profile-box {
+  margin: 0 25%;
+  .image-area {
+    width: 100%;
+    .image-box {
+      height: 200px;
+      width: 200px;
+      position: relative;
+      margin: 0 auto;
+      img {
+        height: 200px;
+        width: 200px;
+      }
+      .image-form {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        cursor: pointer;
+        .fa-file-image-o {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+  .profile-form {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin: 20px 0;
+    label {
+      display: block;
+      width: 30%;
+      line-height: 45px;
+    }
+    input {
+      width: 70%;
+      height: 35px;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  }
+}
+
+.btn-box {
+  width: 100%;
+  text-align: center;
+  .submit-btn {
+    display: inline-block;
+    max-width: 100px;
+    text-align: center;
+    background-color: #6a1917;
+    font-size: 16px;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px dashed #FFF;
+    box-shadow: 0px 0px 0px 5px #6a1917;
+    &:hover {
+      border-style: solid;
+    }
+  }
+}

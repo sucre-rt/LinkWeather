@@ -1,9 +1,44 @@
-<%= form_with model: current_user, url: profile_update_path, method: :patch, local: true do |f| %>
-  <%= f.label :name, "名前" %>
-  <%= f.text_field :name %>
-  <%= f.label :my_area, "お住まい地域" %>
-  <%= f.text_field :my_area %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.submit %>
-<% end %>
+<div class="main">
+  <h2 class="title">プロフィール編集</h2>
+  <div class="profile-box">
+    <%= form_with model: current_user, url: profile_update_path, method: :patch, local: true do |f| %>
+      <% if current_user.image.blank?%>
+        <div class="image-box">
+          <%= image_tag "", id: :img_prev %>
+          <div class="image-form">
+            <%= f.label :image, for: "user_img" do %>
+              <i class="fa fa-file-image-o"></i>
+              <%= f.file_field :image, id: :user_img, style: "display:none;" %>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <div class="image-area">
+          <div class="image-box">
+            <%= image_tag "#{current_user.image}", id: :img_prev %>
+            <%= f.label :image, class: "image-form", for: "user_img" do %>
+              <i class="fa fa-file-image-o"></i>
+              <%= f.file_field :image, id: :user_img, style: "display:none;" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="profile-form">
+        <%= f.label :name, "名前" %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="profile-form">
+        <%= f.label :my_area, "お住まい地域" %>
+        <%= f.text_field :my_area %>
+      </div>
+      <div class="profile-form">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+      <div class="btn-box">
+        <%= f.submit "変更", class: "submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
