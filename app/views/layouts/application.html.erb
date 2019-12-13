@@ -33,8 +33,10 @@
           </div>
           <div class="setting-box">
             <div class="setting-btn">
-              <i class="fa fa-cog"></i>
-              <p>設定</p>
+              <%= link_to profile_edit_path do %>
+                <i class="fa fa-cog"></i>
+                <p>設定</p>
+              <% end %>
             </div>
           </div>
         </div>
