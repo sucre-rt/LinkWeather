@@ -1,0 +1,12 @@
+<div class="main">
+  <%= form_with model: @tweet, url: tweets_path, local: true do |f| %>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+    <%= f.submit %>
+  <% end %>
+
+  <% @tweets.each do |tweet| %>
+    <%= tweet.user.name %>
+    <%= tweet.text %>
+  <% end %>
+</div>

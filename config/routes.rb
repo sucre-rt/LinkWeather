@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
   }
 
+  root 'weathers#index'
+
   devise_scope :user do
     get "mypage/:id", :to => "users/confirmations#show", as: 'mypage'
     get "profile_edit", :to => "users/registrations#profile_edit", as: 'profile_edit'
@@ -17,5 +19,7 @@ Rails.application.routes.draw do
       post :index
     end
   end
+
+  resources :tweets, only: [:index, :create]
   
 end
