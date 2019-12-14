@@ -1,3 +1,71 @@
-// Place all the styles related to the tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./mixin";
+
+.right-content {
+  width: 30%;
+  float: right;
+  padding: 40px;
+  .user-info {
+    display: flex;
+    img {
+      height: 80px;
+      width: 80px;
+      margin: 3px;
+    }
+    p {
+      line-height: 86px;
+      margin-left: 20px;
+    }
+  }
+  .tweet-form {
+    width: 95%;
+    height: 150px;
+    padding: 5px;
+  }
+  .tweet-btn {
+    text-align: right;
+    height: 50px;
+    margin-top: 10px;
+    input {
+      width: 40%;
+      padding: 10px;
+      border: solid 1px #fac559;
+      background-color: #fac559;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        border: solid 1px #504946;
+      }
+    }
+  }
+}
+.tweet-area {
+  width: 55%;
+  padding: 40px 0 40px 40px;
+  .one-tweet {
+    width: 100%;
+    display: flex;
+    margin: 20px 0;
+    padding: 10px;
+    border: solid 1px #f2d58a;
+    position: relative;
+    img {
+      height: 80px;
+      width: 80px;
+      margin: 3px;
+    }
+    .tweet-info {
+      margin: 0 10px;
+      .tweet-name {
+        font-weight: bold;
+      }
+      .tweet-text {
+        margin-bottom: 20px;
+      }
+      .tweet-time {
+        font-size: 13px;
+        position: absolute;
+        bottom: 10px;;
+      }
+    }
+  }
+}

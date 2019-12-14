@@ -2,6 +2,8 @@
 @import "font-awesome";
 @import "./weathers";
 @import "./users";
+@import "./tweets";
+@import "./mixin";
 
 
 header {
@@ -66,25 +68,17 @@ header {
       display: flex;
       justify-content: flex-end;
       .tweet-box {
-        display: inline-block;
+        @include btn;
         height: 40px;
         width: 180px;
         border: solid #f39800;
-        border-radius: 5px;
-        text-align: center;
         line-height: 40px;
         background: #fef9fb;
         box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
-        position: relative;
         a {
           color: #f39800;
-          text-decoration: none;
           font-weight: bold;
           font-size: 14px;
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 100%;
           &:hover {
             color: #fef9fb;
           }
@@ -96,25 +90,17 @@ header {
         }
       }
       .mypage-box {
-        display: inline-block;
+        @include btn;
         height: 40px;
         width: 90px;
         border: solid #bd6856;
-        border-radius: 5px;
-        text-align: center;
         line-height: 40px;
         background: #fdede4;
-        position: relative;
         margin: 4px 0 0 15px;
         a {
           color: #bd6856;
-          text-decoration: none;
           font-weight: bold;
           font-size: 14px;
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 100%;
           &:hover {
             color: #fdede4;
           }
@@ -124,25 +110,17 @@ header {
         }
       }
       .logout-box {
-        display: inline-block;
+        @include btn;
         height: 40px;
         width: 90px;
         border: solid #504946;
-        border-radius: 5px;
-        text-align: center;
         line-height: 40px;
         background: #d3d6dd;
-        position: relative;
         margin: 4px 0 0 15px;
         a {
           color: #504946;
-          text-decoration: none;
           font-weight: bold;
           font-size: 14px;
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 100%;
           &:hover {
             color: #fef9fb;
           }
@@ -187,25 +165,17 @@ header {
       .session-box {
         margin-right: 20px;
         .login-box, .signup-box {
-          display: inline-block;
+          @include btn;
           height: 40px;
           width: 90px;
           border: solid #bd6856;
-          border-radius: 5px;
-          text-align: center;
           line-height: 40px;
           background: #fdede4;
-          position: relative;
           margin: 4px 0 0 15px;
           a {
             color: #bd6856;
-            text-decoration: none;
             font-weight: bold;
             font-size: 14px;
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 100%;
             &:hover {
               color: #fdede4;
             }
