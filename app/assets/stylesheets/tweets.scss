@@ -28,7 +28,6 @@
       flex-wrap: wrap;
       .image-prev {
         width: 33%;
-        height: auto;
         position: relative;
         img {
           width: 100%;
@@ -112,7 +111,6 @@
           }
           img {
             width: 100%;
-            height: auto;
             position: absolute;
             left: 0;
             top: 50%;
@@ -121,5 +119,25 @@
         }
       }
     }
+  }
+  #popup-background{
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:#000;
+    opacity: 0.60;
+    margin: 0;
+    padding: 0;
+    z-index:100;
+  }
+  #popup-item{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    z-index:101;
   }
 }

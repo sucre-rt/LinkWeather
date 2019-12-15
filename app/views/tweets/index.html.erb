@@ -45,7 +45,9 @@
               <% if tweet.images %>
                 <% tweet.images.each do |image| %>
                   <div class="tweet-image">
-                    <%= image_tag "#{image.image.url}" %>
+                    <%= link_to "#{image.image.url}", class: "expansion-image" do %>
+                      <%= image_tag "#{image.image.url}" %>
+                    <% end %>
                   </div>
                 <% end %>
               <% end %>
@@ -54,5 +56,8 @@
         </div>
       <% end %>
     <% end %>
+    <div id="popup-background">
+    </div>
+    <img id="popup-item" src="" >
   </div>
 </div>

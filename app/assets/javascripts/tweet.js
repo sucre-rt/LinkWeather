@@ -1,5 +1,5 @@
+// ツイート画像投稿
 $(function() {
-
   function prevHtml(file, num) {
             html = `<div class="image-prev-box image-prev" data-num="${num}">
                       <img src="${file}" class="image-show">
@@ -65,4 +65,46 @@ $(function() {
       input_box.append(input);
     };
   });
+})
+
+
+// ツイート済み画像拡大
+$(function() {
+  $('#popup-background').hide();
+  $('#popup-item').hide();
+
+  function imgload(imgsource){
+    $('#popup-background').fadeIn(function(){
+        // 画像の左上が中心にきてしまうため、ネガティブマージンで調整
+        let item_hieght_margin = (imgsource.height / 2) * -1;
+        let item_width_margin = (imgsource.width / 2) * -1;
+        let cssObj = {
+            marginTop: item_hieght_margin,
+            marginLeft: item_width_margin,
+            width: imgsource.width,
+            height: imgsource.height
+        }
+        $('#popup-item').css(cssObj).fadeIn(100);
+    });
+  };
+
+  $('.expansion-image').click(function(e){
+    e.preventDefault(); 
+    // クリックされた画像の情報を取得
+    let img = new Image();
+    let img_src = this.href;
+
+    $(img).load(function() {
+      $('#popup-item').attr('src', img_src);
+      $('#popup-item').bind('load', function(){
+        imgload(img);
+      });
+    });
+    img.src = img_src;    // Image()に画像を読み込ませる
+
+    $('#popup-background, #popup-item').bind('click', function(){
+      $('#popup-background').fadeOut();
+      $('#popup-item').fadeOut();
+    });
+  })
 })
