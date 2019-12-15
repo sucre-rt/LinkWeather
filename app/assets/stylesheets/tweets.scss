@@ -21,6 +21,27 @@
     height: 150px;
     padding: 5px;
   }
+  .image-form {
+    .image-prev-all {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .image-prev {
+        width: 33%;
+        height: auto;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .image-delete {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+  }
   .tweet-btn {
     text-align: right;
     height: 50px;

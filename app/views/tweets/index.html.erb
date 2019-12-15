@@ -10,6 +10,18 @@
     </div>
     <%= form_with model: @tweet, url: tweets_path, local: true do |f| %>
       <%= f.text_area :text, class: "tweet-form", placeholder: "地域名と一緒に今の天気を共有しよう！" %>
+      <div class="image-form">
+        <%= f.fields_for :images do |i| %>
+          <div class="image-prev-all">
+          </div>
+          <div class="image-form-box">
+            <div class="image-upload" data-num="0">
+              <%= i.file_field "images[]", multiple: true, name: "images[:image][]", class: "upload_tweet_image", id: 'upload_img_last' %>
+              <%= i.hidden_field :id %>
+            </div>
+          </div>
+        <% end %>
+      </div>
       <div class="tweet-btn">
         <%= f.submit "投稿" %>
       </div>
