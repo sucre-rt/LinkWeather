@@ -12,7 +12,7 @@
   <body>
     <header>
       <div class="logo-box">
-        <%= link_to "#" do %>
+        <%= link_to root_path do %>
           <%= image_tag 'logo.png', class: "logo-img" %>
         <% end %>
       </div>
@@ -29,7 +29,7 @@
         </div>
         <div class="header-right-under">
           <div class="tweet-box">
-            <%= link_to "Let's sharing wether!", "#" %>
+            <%= link_to "Let's sharing wether!", tweets_path %>
           </div>
           <% if user_signed_in? %>
             <div class="mypage-box">
