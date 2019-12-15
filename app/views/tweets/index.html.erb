@@ -15,6 +15,7 @@
           <%= f.fields_for :images do |i| %>
             <div class="image-prev-all">
             </div>
+            <p>※画像ファイルは1枚ずつ選択してください</p>
             <div class="image-form-box">
               <div class="image-upload" data-num="0">
                 <%= i.file_field "images[]", multiple: true, name: "images[:image][]", class: "upload_tweet_image", id: 'upload_img_last' %>
