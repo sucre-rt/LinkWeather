@@ -4,7 +4,7 @@
       <% if current_user.image.blank? %>
         <%= image_tag "logo.png" %>
       <% else %>
-        <%= image_tag "current_user.image" %>
+        <%= image_tag "#{current_user.image}" %>
       <% end %>
       <p><%= current_user.name %></p>
     </div>
@@ -35,12 +35,21 @@
           <% if tweet.user.image.blank? %>
             <%= image_tag "logo.png" %>
           <% else %>
-            <%= image_tag "current_user.image" %>
+            <%= image_tag "#{current_user.image}" %>
           <% end %>
           <div class="tweet-info">
             <p class="tweet-name"><%= tweet.user.name %></p>
             <p class="tweet-text"><%= tweet.text %></p>
             <p class="tweet-time"><%= tweet.created_at.strftime("%Y/%m/%d(%a) %H:%M") %></p>
+            <div class="tweet-image-box">
+              <% if tweet.images %>
+                <% tweet.images.each do |image| %>
+                  <div class="tweet-image">
+                    <%= image_tag "#{image.image.url}" %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>

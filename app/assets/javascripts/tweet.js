@@ -19,7 +19,6 @@ $(function() {
   let input_box = $('.image-form-box');
   let num = 0
   $(document).on('change', '#upload_img,#upload_img_last',function(e) {
-    let form = $(this);
     let file = $(this).prop('files')[0];
     let input = imageFormHtml(num + 1);
     let form_check = $(input_box).find('.upload_tweet_image').length
@@ -35,7 +34,6 @@ $(function() {
       reader.onload = function (e) {
         let html = prevHtml(e.target.result, num - 1);
         $('.image-prev-all').append(html);
-        // $(form).attr('data-src', e.target.result);    //削除するときのためにinputにdata属性に画像情報を持たせる
       }
       reader.readAsDataURL(file);
     };
