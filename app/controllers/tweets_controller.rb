@@ -4,13 +4,17 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all.order("created_at DESC")
     @tweet = Tweet.new
     @image = @tweet.images.build
+    icons = ["fa fa-umbrella", "fa fa-cloud", "fa fa-sun-o", "fa fa-moon-o", "fa fa-tint", "fa fa-bolt", "fa fa-snowflake-o", "fa fa-star"]
+    @icon = icons.sample
   end
 
   def create
     @tweet = current_user.tweets.build(text: tweet_params[:text])
     if @tweet.save
-      params[:images][":image"].each do |image|
-        @tweet.images.create!(image: image, tweet_id: @tweet_id)
+      if params[:images] != nil
+        params[:images][":image"].each do |image|
+          @tweet.images.create!(image: image, tweet_id: @tweet_id)
+        end
       end
       redirect_to tweets_path
     else
