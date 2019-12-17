@@ -103,7 +103,7 @@
   padding: 40px 0 40px 40px;
 }
 .one-tweet {
-  width: 100%;
+  box-sizing: border-box;
   display: flex;
   margin: 20px 0;
   padding: 10px;
@@ -133,6 +133,7 @@
       height: auto;
       display: flex;
       margin-bottom: 35px;
+      overflow: hidden;
       .tweet-image {
         width: 16%;
         height: auto;

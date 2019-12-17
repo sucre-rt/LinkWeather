@@ -58,8 +58,14 @@
   }
   .tweet-result {
     width: 30%;
+    height: 400px;
     float: left;
     margin: 20px 40px 20px 20px;
+    overflow: scroll;
+    padding: 3px;
+    .more-tweets {
+      text-align: right;
+    }
   }
 }
 
