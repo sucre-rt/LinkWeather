@@ -2,7 +2,9 @@
   background-color: #fffff9;
   min-height: calc(100vh - 230px);
   .city-weather {
+    float: left;
     width: 60%; 
+    margin: 20px;
     .forecast-area {
       font-weight: bold;
       font-size: 20px;
@@ -53,6 +55,11 @@
         }
       }
     }    
+  }
+  .tweet-result {
+    width: 30%;
+    float: left;
+    margin: 20px 40px 20px 20px;
   }
 }
 

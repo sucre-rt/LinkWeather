@@ -58,5 +58,11 @@
         </div>
       </div>
     <% end %>
+    <div class="tweet-result">
+      <%= render partial: 'tweets/tweet' %>
+      <div class="more-tweets">
+        <%= link_to "#{@area}の投稿をもっと見る", "" %>
+      </div>
+    </div>
   <% end %>
 </div>

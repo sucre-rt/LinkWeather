@@ -9,13 +9,17 @@ class WeathersController < ApplicationController
       @area = ""
     else
       @area = search_params[:city]
+      # 投稿検索
+      @today = Date.today
+      @tweets = Tweet.search(@area, @today)
+
+      # 天気情報
       area_result = set_area(@area)
       unless area_result["ResultInfo"]["Count"] == 0
         lon, lat = area_result['Feature'][0]['Geometry']['Coordinates'].split(',')
         @result = get_weather(lat, lon)
         @result_li = @result["list"]
         @area = search_params[:city]
-        @today = Date.today
         @now = DateTime.now
       else
         @result = ""
