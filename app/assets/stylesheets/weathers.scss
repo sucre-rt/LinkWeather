@@ -3,7 +3,7 @@
   min-height: calc(100vh - 230px);
   .city-weather {
     float: left;
-    width: 60%; 
+    width: 50%; 
     margin: 20px;
     .forecast-title {
       text-align: center;
@@ -55,7 +55,7 @@
     }    
   }
   .right-top {
-    width: 30%;
+    width: 25%;
     float: left;
     margin: 20px 40px 20px 20px;
     .tweet-result {

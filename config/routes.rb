@@ -25,5 +25,11 @@ Rails.application.routes.draw do
       get :result
     end
   end
+
+  resources :sub_areas, only: [:create] do
+    collection do
+      delete :delete
+    end
+  end
   
 end

@@ -11,6 +11,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   #   super
   # end
 
+  # マイページ
   def show
     if current_user.my_area.blank?
       @area = "東京都"
@@ -21,10 +22,14 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
       @today = Date.today
       @now = DateTime.now
       @tweets = Tweet.tweet_like(@area).page(params[:page]).per(10)
+      unless current_user.sub_areas.blank?
+        @sub_areas = current_user.sub_areas
+      end
     else
       @area = current_user.my_area
       @tweets = Tweet.tweet_like(@area).page(params[:page]).per(10)
       area_result = set_area(@area)
+      # マイエリアの読みこみ
       unless area_result["ResultInfo"]["Count"] == 0
         lon, lat = area_result['Feature'][0]['Geometry']['Coordinates'].split(',')
         @result = get_weather(lat, lon)
@@ -33,6 +38,9 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
         @now = DateTime.now
       else
         @result = ""
+      end
+      unless current_user.sub_areas.blank?
+        @sub_areas = current_user.sub_areas
       end
     end
   end

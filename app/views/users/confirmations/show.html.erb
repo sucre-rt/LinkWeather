@@ -4,6 +4,11 @@
       <h1>該当する地域がありません。</h1>
     </div>
   <% else%>
+    <% unless @sub_areas.blank? %>
+      <% @sub_areas.each do |sub| %>
+        <%= link_to sub.area, weathers_path(params: { city: sub.area }), method: :post %>
+      <% end %>
+    <% end%>
     <div class="city-weather">
       <h2 class="forecast-area"><%= "#{@area}の天気" %></h2>
       <div class="now-weather-information">
