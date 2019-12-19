@@ -1,4 +1,8 @@
-<% if @tweets %>
+<% if @tweets.blank? %>
+  <div class="no-result">
+    <p><%= @area %>に関する投稿がありません。</p>
+  </div>
+<% else %>
   <% @tweets.each do |tweet| %>
     <div class="one-tweet">
       <% if tweet.user.image.blank? %>

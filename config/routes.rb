@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :tweets, only: [:index, :create]
+  resources :tweets, only: [:index, :create] do
+    collection do
+      get :result
+    end
+  end
   
 end

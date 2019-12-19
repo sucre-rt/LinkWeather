@@ -1,0 +1,9 @@
+<div class="right-top">
+  <h2><%= "#{area}の今日の投稿" %></h2>
+  <div class="tweet-result"  >
+    <%= render partial: 'tweets/tweet' %>
+    <div class="more-tweets">
+      <%= link_to "#{area}の投稿をもっと見る", result_tweets_path(params: {area: area}) %>
+    </div>
+  </div>
+</div>

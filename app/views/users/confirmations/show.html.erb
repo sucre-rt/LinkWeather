@@ -26,6 +26,7 @@
         </div>
       </div>
 
+      <h2><%= "　#{@area}の３日間の予報" %></h2>
       <div class="weather-box">
         <%= render partial: './weathers/weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 0, 00, 00), time: "0:00:00", day: @today }%>
         <%= render partial: './weathers/weather', locals: { day_time: Time.local(@today.year, @today.month, @today.day, 3, 00, 00), time: "3:00:00", day: @today }%>
@@ -56,4 +57,5 @@
       </div>
     </div>
   <% end %>
+    <%= render partial: './tweets/search', locals: { area: @area } %>
 </div>

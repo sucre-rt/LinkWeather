@@ -1,0 +1,52 @@
+<div class="main">
+  <% if user_signed_in? %>
+    <div class="right-content">
+      <% if @area %>
+        <h2><%= "#{@area}の今の天気を投稿しよう！" %></h2>
+        <div class="user-info">
+          <% if current_user.image.blank? %>
+            <%= image_tag "logo.png" %>
+          <% else %>
+            <%= image_tag "#{current_user.image}" %>
+          <% end %>
+          <p><%= current_user.name %></p>
+        </div>
+        <%= form_with model: @tweet, url: tweets_path, local: true do |f| %>
+          <%= f.text_area :text, class: "tweet-form", placeholder: "地域名と一緒に今の天気を共有しよう！", value: @area %>
+          <div class="image-form">
+            <%= f.fields_for :images do |i| %>
+              <div class="image-prev-all">
+              </div>
+              <p>※画像ファイルは1枚ずつ選択してください（最大６枚）</p>
+              <div class="image-form-box">
+                <div class="image-upload" data-num="0">
+                  <%= i.file_field "images[]", multiple: true, name: "images[:image][]", class: "upload_tweet_image", id: 'upload_img_last' %>
+                  <%= i.hidden_field :id %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="tweet-btn">
+            <%= f.submit "投稿" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="right-content">
+      <div class="login-info">
+        <p>会員登録して、今の天気を共有しよう <i class= "<%=@icon%>"></i></p>
+        <%= link_to "新規登録", new_user_registration_path, class: "new-user" %>
+        <p>登録済みの方は<%= link_to "ログイン", new_user_session_path, class: "already-user" %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="tweet-area">
+    <% if @area %>
+      <h2><%= "#{@area}の検索結果" %></h2>
+      <%= render partial: 'tweets/tweet' %>
+    <% end %>
+
+  </div>
+</div>
