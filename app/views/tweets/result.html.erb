@@ -45,8 +45,13 @@
   <div class="tweet-area">
     <% if @area %>
       <h2><%= "#{@area}の検索結果" %></h2>
-      <%= render partial: 'tweets/tweet' %>
+      <div class="jscroll">
+        <%= render partial: 'tweets/tweet' %>
+        <%= paginate @tweets %>
+      </div>
     <% end %>
-
   </div>
+    <div id="popup-background">
+    </div>
+    <img id="popup-item" src="" >
 </div>

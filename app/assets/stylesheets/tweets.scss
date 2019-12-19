@@ -104,6 +104,9 @@
 .tweet-area {
   width: 55%;
   padding: 40px 0 40px 40px;
+  .jscroll {
+    width: 100%;
+  }
 }
 .one-tweet {
   box-sizing: border-box;
@@ -176,4 +179,8 @@
   margin: 0;
   padding: 0;
   z-index:101;
+}
+
+nav.pagination {
+  display: none;
 }

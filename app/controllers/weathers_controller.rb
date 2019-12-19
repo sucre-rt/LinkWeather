@@ -11,7 +11,7 @@ class WeathersController < ApplicationController
       @area = search_params[:city]
       # 投稿検索
       @today = Date.today
-      @tweets = Tweet.search(@area, @today)
+      @tweets = Tweet.search(@area, @today).page(params[:page]).per(10)
 
       # 天気情報
       area_result = set_area(@area)

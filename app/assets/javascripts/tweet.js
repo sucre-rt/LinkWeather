@@ -19,6 +19,7 @@ $(function() {
   let input_box = $('.image-form-box');
   let num = 0
   $(document).on('change', '#upload_img,#upload_img_last',function(e) {
+    e.preventDefault(); 
     let file = $(this).prop('files')[0];
     let input = imageFormHtml(num + 1);
     let form_check = $(input_box).find('.upload_tweet_image').length
@@ -44,6 +45,7 @@ $(function() {
 
   // 画像の削除
   $(document).on('click', ".image-delete", function(e) {
+    e.preventDefault(); 
     let img_box = $(this).parent();
     let img_num = $(img_box).data('num');
     let empty_form = 0;
@@ -88,13 +90,14 @@ $(function() {
     });
   };
 
-  $('.expansion-image').click(function(e){
+  $(document).on('click', '.expansion-image', function(e){
     e.preventDefault(); 
     // クリックされた画像の情報を取得
     let img = new Image();
     let img_src = this.href;
 
     $(img).load(function() {
+      console.log('1')
       $('#popup-item').attr('src', img_src);
       $('#popup-item').bind('load', function(){
         imgload(img);
@@ -106,5 +109,20 @@ $(function() {
       $('#popup-background').fadeOut();
       $('#popup-item').fadeOut();
     });
-  })
+  });
+});
+
+// スクロール読み込み
+$(function() {
+  $(window).on('scroll', function(e) {
+    e.preventDefault(); 
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.1) {
+      $('.jscroll').jscroll({
+        contentSelector: '.jscroll',
+        nextSelector: 'span.next:last a'
+      });
+    };
+  });
 })

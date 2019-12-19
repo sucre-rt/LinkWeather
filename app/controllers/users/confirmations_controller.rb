@@ -20,8 +20,10 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
       @result_li = @result["list"]
       @today = Date.today
       @now = DateTime.now
+      @tweets = Tweet.tweet_like(@area).page(params[:page]).per(10)
     else
       @area = current_user.my_area
+      @tweets = Tweet.tweet_like(@area).page(params[:page]).per(10)
       area_result = set_area(@area)
       unless area_result["ResultInfo"]["Count"] == 0
         lon, lat = area_result['Feature'][0]['Geometry']['Coordinates'].split(',')
