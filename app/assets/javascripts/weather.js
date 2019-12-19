@@ -50,3 +50,11 @@ $(function(){
   $('.description').append(discomfort_info);
 
 });
+
+$(function() {
+  let sub_area = $('div').hasClass('user-area');
+  if (sub_area) {
+    $('.city-weather').css('width', '50%');
+    $('.right-top').css('width', '25%');
+  };
+})

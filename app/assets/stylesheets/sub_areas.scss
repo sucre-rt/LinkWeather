@@ -1,3 +1,36 @@
-// Place all the styles related to the sub_areas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-area {
+  width: 15%;
+  float: left;
+  overflow: scroll;
+  max-height: calc(100vh - 230px);
+  .area-list {
+    height: 100%;
+    margin: 20px;
+    h2 {
+      font-size:16px;
+    }
+    li {
+      height: 3rem;
+      line-height: 3rem;
+      border-radius: 5px;
+      background-color: #fff8e1;
+      margin: .5rem 0;
+      position: relative;
+      a {
+        padding: 0 .5rem;
+        text-decoration: none;
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        &:hover {
+          border: solid 1px #fcc800;
+        }
+      }
+    }
+  }
+}
