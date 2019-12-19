@@ -40,6 +40,12 @@
   <% end %>
 
   <div class="tweet-area">
-    <%= render partial: 'tweet' %>
+    <div class="jscroll">
+      <%= render partial: 'tweet' %>
+      <%= paginate @tweets %>
+    </div>
   </div>
+    <div id="popup-background">
+    </div>
+    <img id="popup-item" src="" >
 </div>

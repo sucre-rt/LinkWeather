@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
   def index
-    @tweets = Tweet.all.order("created_at DESC")
+    @tweets = Tweet.all.order("created_at DESC").page(params[:page]).per(10)
     @tweet = Tweet.new
     @image = @tweet.images.build
     icons = ["fa fa-umbrella", "fa fa-cloud", "fa fa-sun-o", "fa fa-moon-o", "fa fa-tint", "fa fa-bolt", "fa fa-snowflake-o", "fa fa-star"]
@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = current_user.tweets.build(text: tweet_params[:text])
     if @tweet.save
-      if params[:images] != nil
+      unless params[:images].blank?
         params[:images][":image"].each do |image|
           @tweet.images.create!(image: image, tweet_id: @tweet_id)
         end
@@ -24,7 +24,9 @@ class TweetsController < ApplicationController
 
   def result
     @area = search_params[:area]
-    @tweets = Tweet.tweet_like(@area)
+    @tweets = Tweet.tweet_like(@area).page(params[:page]).per(10)
+    @tweet = Tweet.new
+    @image = @tweet.images.build
   end
 
   private
