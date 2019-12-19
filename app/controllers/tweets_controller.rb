@@ -22,12 +22,21 @@ class TweetsController < ApplicationController
     end
   end
 
+  def result
+    @area = search_params[:area]
+    @tweets = Tweet.tweet_like(@area)
+  end
+
   private
 
   def tweet_params
     params.require(:tweet).permit(:text, 
     images_attributes: [:id, :image, :tweet_id]
     )
+  end
+
+  def search_params
+    params.permit(:area)
   end
 
 end

@@ -4,6 +4,9 @@
   width: 30%;
   float: right;
   padding: 40px;
+  h2 {
+    margin-bottom: 10px;
+  }
   .user-info {
     display: flex;
     margin-bottom: 10px;
@@ -101,75 +104,76 @@
 .tweet-area {
   width: 55%;
   padding: 40px 0 40px 40px;
-  .one-tweet {
+}
+.one-tweet {
+  box-sizing: border-box;
+  display: flex;
+  margin: 20px 0;
+  padding: 10px;
+  border: solid 1px #f2d58a;
+  position: relative;
+  img {
+    height: 80px;
+    width: 80px;
+    margin: 3px;
+  }
+  .tweet-info {
+    margin: 0 10px;
     width: 100%;
-    display: flex;
-    margin: 20px 0;
-    padding: 10px;
-    border: solid 1px #f2d58a;
-    position: relative;
-    img {
-      height: 80px;
-      width: 80px;
-      margin: 3px;
+    .tweet-name {
+      font-weight: bold;
     }
-    .tweet-info {
-      margin: 0 10px;
+    .tweet-text {
+      margin-bottom: 10px;
+    }
+    .tweet-time {
+      font-size: 13px;
+      position: absolute;
+      bottom: 10px;
+    }
+    .tweet-image-box {
       width: 100%;
-      .tweet-name {
-        font-weight: bold;
-      }
-      .tweet-text {
-        margin-bottom: 10px;
-      }
-      .tweet-time {
-        font-size: 13px;
-        position: absolute;
-        bottom: 10px;
-      }
-      .tweet-image-box {
-        width: 100%;
+      height: auto;
+      display: flex;
+      margin-bottom: 35px;
+      overflow: hidden;
+      .tweet-image {
+        width: 16%;
         height: auto;
-        display: flex;
-        margin-bottom: 35px;
-        .tweet-image {
-          width: 16%;
-          height: auto;
-          position: relative;
-          &::before {
-            content: "";
-            display: block;
-            padding: 50% 0 50% 0;
-          }
-          img {
-            width: 100%;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-          }
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          padding: 50% 0 50% 0;
+        }
+        img {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
     }
   }
-  #popup-background{
-    position:fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background:#000;
-    opacity: 0.60;
-    margin: 0;
-    padding: 0;
-    z-index:100;
-  }
-  #popup-item{
-    position:fixed;
-    top: 50%;
-    left: 50%;
-    margin: 0;
-    padding: 0;
-    z-index:101;
-  }
+}
+#popup-background{
+  position:fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background:#000;
+  opacity: 0.60;
+  margin: 0;
+  padding: 0;
+  z-index:100;
+}
+#popup-item{
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  z-index:101;
 }

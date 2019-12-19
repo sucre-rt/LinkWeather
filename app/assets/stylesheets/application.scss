@@ -190,6 +190,7 @@ header {
 }
 
 footer {
+  clear: both;
   width: 100vw;
   height:100px;
   background: image-url('sky.jpg');
@@ -202,4 +203,9 @@ footer {
     width: 100%;
     height: 80px;
   }
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
 }

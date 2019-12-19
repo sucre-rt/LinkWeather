@@ -1,0 +1,35 @@
+<% if @tweets.blank? %>
+  <div class="no-result">
+    <p><%= @area %>に関する投稿がありません。</p>
+  </div>
+<% else %>
+  <% @tweets.each do |tweet| %>
+    <div class="one-tweet">
+      <% if tweet.user.image.blank? %>
+        <%= image_tag "logo.png" %>
+      <% else %>
+        <%= image_tag "#{tweet.user.image}" %>
+      <% end %>
+      <div class="tweet-info">
+        <p class="tweet-name"><%= tweet.user.name %></p>
+        <p class="tweet-text"><%= tweet.text %></p>
+        <p class="tweet-time"><%= tweet.created_at.strftime("%Y/%m/%d(%a) %H:%M") %></p>
+        <div class="tweet-image-box">
+          <% if tweet.images %>
+            <% tweet.images.each do |image| %>
+              <div class="tweet-image">
+                <%= link_to "#{image.image.url}", class: "expansion-image" do %>
+                  <%= image_tag "#{image.image.url}" %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+<div id="popup-background">
+</div>
+<img id="popup-item" src="" >
+

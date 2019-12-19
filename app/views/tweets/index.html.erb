@@ -15,7 +15,7 @@
           <%= f.fields_for :images do |i| %>
             <div class="image-prev-all">
             </div>
-            <p>※画像ファイルは1枚ずつ選択してください</p>
+            <p>※画像ファイルは1枚ずつ選択してください（最大６枚）</p>
             <div class="image-form-box">
               <div class="image-upload" data-num="0">
                 <%= i.file_field "images[]", multiple: true, name: "images[:image][]", class: "upload_tweet_image", id: 'upload_img_last' %>
@@ -40,35 +40,6 @@
   <% end %>
 
   <div class="tweet-area">
-    <% if @tweets %>
-      <% @tweets.each do |tweet| %>
-        <div class="one-tweet">
-          <% if tweet.user.image.blank? %>
-            <%= image_tag "logo.png" %>
-          <% else %>
-            <%= image_tag "#{tweet.user.image}" %>
-          <% end %>
-          <div class="tweet-info">
-            <p class="tweet-name"><%= tweet.user.name %></p>
-            <p class="tweet-text"><%= tweet.text %></p>
-            <p class="tweet-time"><%= tweet.created_at.strftime("%Y/%m/%d(%a) %H:%M") %></p>
-            <div class="tweet-image-box">
-              <% if tweet.images %>
-                <% tweet.images.each do |image| %>
-                  <div class="tweet-image">
-                    <%= link_to "#{image.image.url}", class: "expansion-image" do %>
-                      <%= image_tag "#{image.image.url}" %>
-                    <% end %>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-    <div id="popup-background">
-    </div>
-    <img id="popup-item" src="" >
+    <%= render partial: 'tweet' %>
   </div>
 </div>

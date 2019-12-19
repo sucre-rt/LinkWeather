@@ -2,10 +2,10 @@
   background-color: #fffff9;
   min-height: calc(100vh - 230px);
   .city-weather {
+    float: left;
     width: 60%; 
-    .forecast-area {
-      font-weight: bold;
-      font-size: 20px;
+    margin: 20px;
+    .forecast-title {
       text-align: center;
     }
     .now-weather-information {
@@ -53,6 +53,25 @@
         }
       }
     }    
+  }
+  .right-top {
+    width: 30%;
+    float: left;
+    margin: 20px 40px 20px 20px;
+    .tweet-result {
+      width: 100%;
+      height: 400px;
+      overflow: scroll;
+      padding: 3px;
+      .more-tweets {
+        text-align: right;
+      }
+    }
+    .no-result {
+      p {
+        margin: 10px 0;
+      }
+    }
   }
 }
 
