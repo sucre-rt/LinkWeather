@@ -4,8 +4,9 @@
       <h1>該当する地域がありません。</h1>
     </div>
   <% else%>
+    <%= render partial: './sub_areas/area_list', locals: { sub_areas: @sub_areas, my_area: @area } %>
     <div class="city-weather">
-      <h2 class="forecast-area"><%= "#{@area}の天気" %></h2>
+      <h2 class="forecast-title"><%= "#{@area}の天気" %></h2>
       <div class="now-weather-information">
         <div class="main-left">
           <h3>不快指数</h3>

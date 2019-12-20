@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_055121) do
+ActiveRecord::Schema.define(version: 2019_12_19_073315) do
 
   create_table "images", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2019_12_14_055121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tweet_id"], name: "index_images_on_tweet_id"
+  end
+
+  create_table "sub_areas", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "area"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sub_areas_on_user_id"
   end
 
   create_table "tweets", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -44,5 +52,6 @@ ActiveRecord::Schema.define(version: 2019_12_14_055121) do
   end
 
   add_foreign_key "images", "tweets"
+  add_foreign_key "sub_areas", "users"
   add_foreign_key "tweets", "users"
 end

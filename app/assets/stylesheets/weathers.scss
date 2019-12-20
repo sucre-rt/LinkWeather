@@ -1,6 +1,9 @@
+@import "./color";
+
 .main {
   background-color: #fffff9;
   min-height: calc(100vh - 230px);
+  overflow: auto;
   .city-weather {
     float: left;
     width: 60%; 
@@ -13,6 +16,7 @@
       text-align: center;
       display: flex;
       padding: 20px 10px;
+      position: relative;
       .main-left {
         width: 33%;
         .discomfort {
@@ -38,7 +42,7 @@
       margin: 1em 10px;
       padding: 1em;
       background-color: #fff8e1;
-      border: dashed 3px #ffc107;
+      border: dashed 3px $point-color;
       box-shadow: 0 0 0 10px #fff8e1;
       border-radius: 5px;
       &__time-box {
@@ -57,7 +61,7 @@
   .right-top {
     width: 30%;
     float: left;
-    margin: 20px 40px 20px 20px;
+    margin: 20px;
     .tweet-result {
       width: 100%;
       height: 400px;

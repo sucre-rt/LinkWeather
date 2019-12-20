@@ -6,6 +6,7 @@
         <h1>該当する地域がありません。</h1>
       </div>
     <% else%>
+      <%= render partial: './sub_areas/area_list', locals: { sub_areas: @sub_areas, my_area: @area } %>
       <div class="city-weather">
         <h2 class="forecast-title"><%= "#{@area}の天気" %></h2>
         <div class="now-weather-information">
@@ -26,6 +27,9 @@
             <p class="now-humidity"></p>
             <p class="now-wind"></p>
           </div>
+          <% if user_signed_in? %>
+            <%= render partial: 'sub_areas/sub_area_btn', locals: { city: @area } %>
+          <% end %>
         </div>
 
         <h2><%= "　#{@area}の３日間の予報" %></h2>
@@ -60,5 +64,8 @@
       </div>
     <% end %>
     <%= render partial: './tweets/search', locals: { area: @area } %>
+    <div id="popup-background">
+    </div>
+    <img id="popup-item" src="" >
     <% end %>
 </div>

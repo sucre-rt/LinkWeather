@@ -1,0 +1,18 @@
+<% unless sub_areas.blank? %>
+  <div class="user-area">
+    <ul class="area-list">
+      <% unless my_area.blank? %>
+        <h2>マイエリア</h2>
+        <li class="set-area">
+          <%= link_to current_user.my_area, mypage_path(current_user.id) %>
+        </li>
+      <% end %>
+      <h2>サブエリア</h2>
+      <% sub_areas.each do |sub| %>
+        <li class="set-area">
+          <%= link_to sub.area, weathers_path(params: { city: sub.area }), method: :post %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

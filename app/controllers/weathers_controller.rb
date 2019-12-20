@@ -12,7 +12,12 @@ class WeathersController < ApplicationController
       # 投稿検索
       @today = Date.today
       @tweets = Tweet.search(@area, @today).page(params[:page]).per(10)
-
+      # ユーザーエリアリスト
+      if user_signed_in?
+        unless current_user.sub_areas.blank?
+          @sub_areas = current_user.sub_areas
+        end
+      end
       # 天気情報
       area_result = set_area(@area)
       unless area_result["ResultInfo"]["Count"] == 0
@@ -26,6 +31,7 @@ class WeathersController < ApplicationController
       end
     end
   end
+
 
   private
 
