@@ -28,10 +28,7 @@
             <p class="now-wind"></p>
           </div>
         </div>
-        <div class="sub-area-btn">
-          <%= link_to "エリア登録", sub_areas_path(params: { area: @area }), method: :post %>
-          <%= link_to "エリア削除", delete_sub_areas_path(params: { area: @area }), method: :delete %>
-        </div>
+        <%= render partial: 'sub_areas/sub_area_btn', locals: { city: @area } %>
 
         <h2><%= "　#{@area}の３日間の予報" %></h2>
         <div class="weather-box">
