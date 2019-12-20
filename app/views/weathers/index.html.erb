@@ -27,8 +27,10 @@
             <p class="now-humidity"></p>
             <p class="now-wind"></p>
           </div>
+          <% if user_signed_in? %>
+            <%= render partial: 'sub_areas/sub_area_btn', locals: { city: @area } %>
+          <% end %>
         </div>
-        <%= render partial: 'sub_areas/sub_area_btn', locals: { city: @area } %>
 
         <h2><%= "　#{@area}の３日間の予報" %></h2>
         <div class="weather-box">

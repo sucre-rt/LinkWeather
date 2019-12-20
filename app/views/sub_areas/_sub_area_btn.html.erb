@@ -1,9 +1,9 @@
 <div class="sub-area-btn" id="sub-area-link-<%= city %>" data-no-turbolink>
   <% if current_user.my_area == city %>
   <% elsif current_user.already_area?(city) %>
-    <%= link_to "エリア削除", delete_sub_areas_path(params: { area: city }), method: :delete, remote: true, data: {turbolinks: false} %>
+    <%= link_to "削除", delete_sub_areas_path(params: { area: city }), method: :delete, remote: true, data: {turbolinks: false} %>
   <% else %>
-    <%= link_to "エリア登録", sub_areas_path(params: { area: city }), method: :post, remote: true, data: {turbolinks: false}  %>
+    <%= link_to "登録", sub_areas_path(params: { area: city }), method: :post, remote: true, data: {turbolinks: false}  %>
   <% end %>
 </div>
 
