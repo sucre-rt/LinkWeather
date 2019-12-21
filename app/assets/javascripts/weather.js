@@ -56,5 +56,6 @@ $(function() {
   if (sub_area) {
     $('.city-weather').css('width', '50%');
     $('.right-top').css('width', '25%');
+    $('.right-under').css('width', '25%');
   };
 })
