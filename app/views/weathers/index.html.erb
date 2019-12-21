@@ -63,14 +63,20 @@
         </div>
       </div>
     <% end %>
+
     <%= render partial: './tweets/search', locals: { area: @area } %>
-    <div class="twitter">
-      <% @twitter_tweets.each do |tweet| %>
-        <blockquote class="twitter-tweet tw-align-center" data-lang="ja" data-width=”200px”>
-          <%= link_to '',"https://twitter.com/#{ tweet[:user][:screen_name] }/status/#{ tweet[:id] }", target: :_blank %>     
-        </blockquote>
-      <% end %>
+
+    <div class="right-under">
+      <h2><%= @area %>のtwitter検索結果</h2>
+      <div class="twitter">
+        <% @twitter_tweets.take(10).each do |tweet| %>
+          <blockquote class="twitter-tweet tw-align-center" data-lang="ja" data-width=”100%”>
+            <%= link_to '',"https://twitter.com/#{ tweet[:user][:screen_name] }/status/#{ tweet[:id] }", target: :_blank %>     
+          </blockquote>
+        <% end %>
+      </div>
     </div>
+    
     <div id="popup-background">
     </div>
     <img id="popup-item" src="" >

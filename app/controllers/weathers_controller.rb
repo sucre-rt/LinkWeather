@@ -55,14 +55,7 @@ class WeathersController < ApplicationController
   # ツイッター検索
   def twitter_search(keyword)
     search_option = { count: 10, lang: 'ja', result_type: 'recent', exclude: 'retweets', tweet_mode: 'extended' }
-    @twitter_tweets = twitter_client.search("##{keyword} OR #{keyword} AND #天気 OR 天気 ", search_option)
-    begin
-      @twitter_tweets.take(10).each do |tw|
-        { tweet_link: "https://twitter.com/#{tw.user.screen_name}/status/#{tw.id}" }
-      end
-    rescue
-      @twitter_tweets = []
-    end
+    @twitter_tweets = twitter_client.search("#{keyword} AND 天気 ", search_option)
   end
 
   def twitter_client
