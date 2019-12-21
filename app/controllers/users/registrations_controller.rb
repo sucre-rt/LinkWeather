@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:profile_update]
+  before_action :move_to_login, only: [:profile_edit, :profile_update]
 
   # GET /resource/sign_up
   # def new
@@ -53,7 +54,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :my_area])
-   end
+  end
+
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

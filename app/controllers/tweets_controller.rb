@@ -23,6 +23,7 @@ class TweetsController < ApplicationController
     end
   end
 
+  # weatherページのもっと見るを押した先
   def result
     @area = search_params[:area]
     @tweets = Tweet.tweet_like(@area).page(params[:page]).per(10)

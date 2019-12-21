@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::ConfirmationsController < Devise::ConfirmationsController
+  before_action :move_to_login, only: [:show]
   # GET /resource/confirmation/new
   # def new
   #   super
@@ -71,6 +72,10 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
       config.consumer_key         = Rails.application.credentials.twitter[:api_key]
       config.consumer_secret      = Rails.application.credentials.twitter[:secret_api_key]
     end
+  end
+
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
   # The path used after resending confirmation instructions.
