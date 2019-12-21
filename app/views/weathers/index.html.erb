@@ -27,8 +27,10 @@
             <p class="now-humidity"></p>
             <p class="now-wind"></p>
           </div>
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.my_area != @area %>
+          <div class="sub-area-btn" id="sub-area-link-<%= @area %>">
             <%= render partial: 'sub_areas/sub_area_btn', locals: { city: @area } %>
+          </div>
           <% end %>
         </div>
 
