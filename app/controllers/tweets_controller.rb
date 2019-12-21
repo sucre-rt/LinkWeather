@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  # アプリ内投稿機能
 
   def index
     @tweets = Tweet.all.order("created_at DESC").page(params[:page]).per(10)
