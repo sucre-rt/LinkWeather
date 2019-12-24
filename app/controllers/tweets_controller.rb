@@ -23,6 +23,19 @@ class TweetsController < ApplicationController
     end
   end
 
+  def destroy
+    tweet = Tweet.find(params[:id])
+    if tweet.user_id == current_user.id
+      if tweet.destroy
+        flash[:notice] = "削除しました"
+        redirect_to tweets_path
+      else
+        flash[:alert] = "削除に失敗しました"
+        redirect_to tweets_path
+      end
+    end
+  end
+
   # weatherページのもっと見るを押した先
   def result
     @area = search_params[:area]
