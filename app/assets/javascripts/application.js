@@ -16,3 +16,7 @@
 // require turbolinks
 //= require_tree .
 //= require jquery.jscroll.min.js
+
+$(function(){ 
+  setTimeout("$('.flash-message').fadeOut('slow')", 1500);
+})
