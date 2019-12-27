@@ -10,7 +10,7 @@ $(function() {
 
   function imageFormHtml(num) {
           html = `<div class="image-upload" data-num="${num}">
-                    <input multiple="multiple" name="images[:image][]" type="file" class="upload_tweet_image"  id="upload_img">
+                    <input multiple="multiple" name="images[image][-${num + 1}]" type="file" class="upload_tweet_image"  id="upload_img">
                     <input type="hidden" name="tweet[images_attributes][0][id]">
                   </div>`
           return html
@@ -23,7 +23,8 @@ $(function() {
     let file = $(this).prop('files')[0];
     let input = imageFormHtml(num + 1);
     let form_check = $(input_box).find('.upload_tweet_image').length
-    if (form_check < 6){
+    let already_input = $('.already-image').length
+    if (form_check + already_input < 6){
       input_box.prepend(input);
     };
 
@@ -67,6 +68,26 @@ $(function() {
       input_box.append(input);
     };
   });
+
+  // ツイート編集
+  let edit_input_box = $('.edit-image-form');
+  let already_input = $('.already-image').length
+
+  if (already_input < 6) {    // フォームの追加
+    edit_input_box.append(imageFormHtml(num))
+  }
+
+  $(document).on('click', '.already-image-delete', function(e){
+    let img_id = $(this).data('delete');
+    let delete_form = $('.edit-image-form').find("input:hidden[name=delete]");
+    let get_id = $(delete_form).val();
+    // 削除するidをinputのvalueに格納
+    $(delete_form).val(img_id + "," + get_id);
+    // 表示を隠す
+    let delete_box = ".already-image-" + img_id
+    $(delete_box).hide();
+  });
+
 })
 
 
@@ -97,7 +118,6 @@ $(function() {
     let img_src = this.href;
 
     $(img).load(function() {
-      console.log('1')
       $('#popup-item').attr('src', img_src);
       $('#popup-item').bind('load', function(){
         imgload(img);

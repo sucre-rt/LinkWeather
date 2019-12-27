@@ -29,6 +29,7 @@
       <% if tweet.user_id == current_user.id %>
         <div class="tweet-edit">
           <%= link_to "削除", tweet_path(tweet.id), method: :delete %>
+          <%= link_to "編集", edit_tweet_path(tweet.id), method: :get %>
         </div>
       <% end %>
     </div>

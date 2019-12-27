@@ -1,4 +1,4 @@
 class Image < ApplicationRecord
   belongs_to :tweet
-  mount_uploader :image, TweetUploader
+  mount_uploader :image, TweetUploader, only: [:create]
 end
