@@ -191,6 +191,28 @@ header {
   }
 }
 
+.flash-message {
+  position: absolute;
+  top: 130px;
+  z-index: 5;
+  height: 30px;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  .notice {
+    background-color: $notice_orange;
+    color: #504946;
+    text-align: center;
+  }
+  .alert {
+    background-color: $alert_red;
+    color: #fff;
+    text-align: center;
+  }
+}
+
 footer {
   clear: both;
   width: 100vw;

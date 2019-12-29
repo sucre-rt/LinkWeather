@@ -1,0 +1,41 @@
+<div class="main">
+  <h2 class="title">投稿編集</h2>
+  <div class="edit-content">
+    <div class="edit-user-info">
+      <% if @tweet.user.image.blank? %>
+        <%= image_tag "logo.png" %>
+      <% else %>
+        <%= image_tag "#{@tweet.user.image}" %>
+      <% end %>
+      <p><%= @tweet.user.name %></p>
+    </div>
+    <%= form_with model: @tweet, url: tweet_path, method: :patch, local: true, class: "edit-form", multipart: true do |f| %>
+      <%= f.text_area :text, placeholder: "地域名と一緒に今の天気を共有しよう！", value: @tweet.text, class: "edit-text" %>
+      <div class="image-form edit-image-form">
+        <%= f.fields_for :images do |i| %>
+          <% unless @tweet.images.blank? && i.object[:image] == nil %>
+            <div class="already-image-<%= i.object.id %> one-image">
+              <%= image_tag i.object.image.url, width: "100%", class: "already-img-prev-#{i.object.id}" %>
+              <%= i.label "images[]", for: "edit-image-#{i.object.id}" do %>
+                編集
+                <%= i.file_field "images[]", name: "images[image][#{i.object.id}]", multiple: true, class: "already-image", id: "edit-image-#{i.object.id}", "data-id": "#{i.object.id}", style: "display:none;" %>
+                <%= i.hidden_field :id, value: i.object.id %>
+              <% end %>
+              <div class="already-image-delete" data-delete="<%=i.object.id%>">
+                削除
+              </div>
+            </div>
+          <% end %>
+          <%= f.text_field :delete, value: [], name: "delete", type:"hidden" %>
+        <% end %>
+        <div class="image-prev-all">
+        </div>
+        <div class="image-form-box edit-form-box">
+        </div>
+      </div>
+      <div class="tweet-btn text-center">
+        <%= f.submit "変更" %>
+      </div>
+    <% end %>
+  </div>
+</div>
