@@ -70,12 +70,24 @@ $(function() {
   });
 
   // ツイート編集
-  let edit_input_box = $('.edit-image-form');
   let already_input = $('.already-image').length
 
   if (already_input < 6) {    // フォームの追加
-    edit_input_box.append(imageFormHtml(num))
+    $('.edit-form-box').append(imageFormHtml(num))
   }
+
+  $(document).on('change', '.already-image', function(e) {
+    e.preventDefault(); 
+    let id = $(this).data('id');
+    let img_prev = ".already-img-prev-" + id
+    let change_file = $(this).prop('files')[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(change_file);
+    
+    reader.onload = function() {
+      $(img_prev).attr('src', reader.result );
+    }
+  });
 
   $(document).on('click', '.already-image-delete', function(e){
     let img_id = $(this).data('delete');
@@ -85,7 +97,8 @@ $(function() {
     $(delete_form).val(img_id + "," + get_id);
     // 表示を隠す
     let delete_box = ".already-image-" + img_id
-    $(delete_box).hide();
+    $(delete_box).remove();
+
   });
 
 })

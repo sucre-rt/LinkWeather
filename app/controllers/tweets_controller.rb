@@ -42,27 +42,33 @@ class TweetsController < ApplicationController
   end
 
   def update
-    @tweet.update(text: update_tweet_params[:text])
-    # 画像の更新・追加
-    unless params[:images].blank?
-      unless params[:images][:image].blank?
-        params[:images][:image].each do |img|
-          if img[0].to_i < 0 
-            @tweet.images.create!(image: img[1], tweet_id: @tweet.id)
-          else
-            image = Image.find(img[0])
-            image.update(image: img[1])
+    if @tweet.update(text: update_tweet_params[:text])
+      # 画像の更新・追加
+      unless params[:images].blank?
+        unless params[:images][:image].blank?
+          params[:images][:image].each do |img|
+            if img[0].to_i < 0 
+              @tweet.images.create!(image: img[1], tweet_id: @tweet.id)
+            else
+              image = Image.find(img[0])
+              image.update(image: img[1])
+            end
           end
         end
       end
-    end
-    # 既存画像の削除
-    unless params[:delete].blank?
-      delete_ids = params[:delete].split(",")
-      delete_ids.each do |id|
-        image = Image.find(id)
-        image.destroy
+      # 既存画像の削除
+      unless params[:delete].blank?
+        delete_ids = params[:delete].split(",")
+        delete_ids.each do |id|
+          image = Image.find(id)
+          image.destroy
+        end
       end
+      flash[:notice] = "変更しました"
+      redirect_to tweets_path
+    else
+      flash[:alert] = "変更に失敗しました"
+      redirect_to edit_tweet_path(@tweet.id)
     end
   end
 

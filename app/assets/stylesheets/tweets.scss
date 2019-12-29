@@ -7,104 +7,116 @@
   h2 {
     margin-bottom: 10px;
   }
-  .user-info {
+}
+.user-info {
+  display: flex;
+  margin-bottom: 10px;
+  img {
+    height: 80px;
+    width: 80px;
+    margin: 3px;
+  }
+  p {
+    line-height: 86px;
+    margin-left: 20px;
+  }
+}
+.tweet-form {
+  width: 95%;
+  height: 150px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.image-form {
+  p {
+    font-size: 12px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .image-prev-all {
     display: flex;
-    margin-bottom: 10px;
-    img {
-      height: 80px;
-      width: 80px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    .image-prev {
+      width: 30%;
+      position: relative;
       margin: 3px;
-    }
-    p {
-      line-height: 86px;
-      margin-left: 20px;
-    }
-  }
-  .tweet-form {
-    width: 95%;
-    height: 150px;
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-  .image-form {
-    p {
-      font-size: 12px;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-    }
-    .image-prev-all {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      .image-prev {
-        width: 30%;
-        position: relative;
-        padding: 3px;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-        .image-delete {
-          position: absolute;
-          bottom: 3px;
-          right: 3px;
-        }
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 100%;
       }
-    }
-    .image-form-box {
-      width: 100%;
-      height: auto;
-      margin-top: 10px;
-      .image-upload:first {
+      img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
       }
+      .image-delete {
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+        cursor: pointer;
+      }
     }
   }
-  .tweet-btn {
-    text-align: right;
-    height: 50px;
+  .image-form-box {
+    width: 100%;
+    height: auto;
     margin-top: 10px;
-    input {
-      width: 40%;
-      padding: 10px;
-      border: solid 1px #fac559;
-      background-color: #fac559;
-      border-radius: 5px;
-      cursor: pointer;
-      &:hover {
-        border: solid 1px #504946;
-      }
-    }
-  }
-  .login-info {
-    text-align: center;
-    .already-user {
-      text-decoration: none;
-      display: block;
-      margin: 30px 0;
-      font-size: 23px;
-      color: #f39800;
-      &:hover {
-        color:#f6ae54;
-        text-decoration: underline;
-      }
-    }
-    .new-user {
-      text-decoration: none;
-      display: block;
-      margin: 30px 0;
-      color: #ea5532;
-      font-size: 30px;
-      &:hover {
-        color:#ef857d;
-        text-decoration: underline;
-      }
+    .image-upload:first {
+      width: 100%;
+      height: 100%;
     }
   }
 }
+.tweet-btn {
+  text-align: right;
+  height: 50px;
+  margin-top: 10px;
+  input {
+    width: 40%;
+    padding: 10px;
+    border: solid 1px #fac559;
+    background-color: #fac559;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      border: solid 1px #504946;
+    }
+  }
+}
+.login-info {
+  text-align: center;
+  .already-user {
+    text-decoration: none;
+    display: block;
+    margin: 30px 0;
+    font-size: 23px;
+    color: #f39800;
+    &:hover {
+      color:#f6ae54;
+      text-decoration: underline;
+    }
+  }
+  .new-user {
+    text-decoration: none;
+    display: block;
+    margin: 30px 0;
+    color: #ea5532;
+    font-size: 30px;
+    &:hover {
+      color:#ef857d;
+      text-decoration: underline;
+    }
+  }
+}
+
 .tweet-area {
   width: 55%;
   padding: 40px 0 40px 40px;
@@ -165,7 +177,7 @@
   }
   .tweet-edit {
     position: absolute;
-    right: 0;
+    right: 20px;
   }
 }
 #popup-background{
@@ -194,11 +206,73 @@ nav.pagination {
 }
 
 .edit-content {
-  width: 30%;
-  margin: 0 auto;
-  .edit-image-form {
+  width: 50%;
+  margin: 20px auto;
+  .edit-user-info {
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
     img {
-      width: 30%;
+      width:80px;
+      height: 80px;
+    }
+    p {
+      width: calc(100% - 80px);
+      text-align: center;
+      line-height: 80px;
     }
   }
+  .edit-form {
+    width: 100%;
+    text-align: center;
+    .edit-text {
+      width: 80%;
+      margin: 10px;
+      height: 150px;
+      padding: 10px;
+    }
+    .edit-image-form {
+      margin: 20px 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      .one-image {
+        width: 30%;
+        margin: 3px;
+        position: relative;
+        &:before {
+          content: "";
+          display: block;
+          padding-top: 100%;
+        }  
+        img {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        label {
+          @include img-btn;
+          position: absolute;
+          bottom: 0;
+          right: 25%;
+          background-color: #fff; 
+        }
+        .already-image-delete {
+          @include img-btn;
+          background-color: #c9caca; 
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
 }
