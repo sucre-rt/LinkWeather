@@ -1,5 +1,6 @@
 <div class="main">
   <% if @area.blank? %>
+    <%= render partial: './layouts/top_page' %>
   <% else %>
     <% if @result["cod"] == "404" || @result == "" %>
       <div class="city-weather">
