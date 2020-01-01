@@ -19,9 +19,11 @@ class TweetsController < ApplicationController
           end
         end
       end
+      flash[:notice] = "投稿しました"
       redirect_to tweets_path
     else
-      redirect_to root_path
+      flash[:alert] = "本文は必ず入力してください"
+      redirect_to tweets_path
     end
   end
 
