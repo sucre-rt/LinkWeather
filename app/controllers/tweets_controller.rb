@@ -1,13 +1,12 @@
 class TweetsController < ApplicationController
   # アプリ内投稿機能
+  include WeathersHelper
   before_action :set_tweet, only: [:destroy, :edit, :update]
 
   def index
     @tweets = Tweet.all.order("created_at DESC").page(params[:page]).per(10)
     @tweet = Tweet.new
     @image = @tweet.images.build
-    icons = ["fa fa-umbrella", "fa fa-cloud", "fa fa-sun-o", "fa fa-moon-o", "fa fa-tint", "fa fa-bolt", "fa fa-snowflake-o", "fa fa-star"]
-    @icon = icons.sample
   end
 
   def create

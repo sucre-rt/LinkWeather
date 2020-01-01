@@ -1,0 +1,90 @@
+<div class="top">
+  <div class="top__app-name">
+    <h2>Let's sharing weather!</h2>
+    <h1>Link Weather</h1>
+  </div>
+
+  <div class="top__heading">
+    <h3>今の天気を確認しよう！</h3>
+    <div class="top__heading__info">
+      <div class="search-box">
+        <%= form_with url: weathers_path, method: :post, local: true, class: "weather-search-form" do |f| %>
+          <%= f.text_field :city, class: "area-search", placeholder: "地域を入力" %>
+          <div class="search-btn">
+            <%= button_tag type: "submit" do %>
+              <i class="fa fa-search">検索</i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="top-info-contents">
+        <div class="top-info-contents__content">
+          <h4>天気予報</h4>
+          <p>３時間毎の３日間の予報を表示<br>
+          不快指数で快適さをチェック！</p>
+        </div>
+        <div class="top-info-contents__content">
+          <h4>本日の投稿</h4>
+          <p>LinkWeather内で投稿された天気情報を表示<br>
+          万が一天気予報が外れていても、その場にいるユーザーを通じてリアルタイムの情報を取得できる！</p>
+        </div>
+        <div class="top-info-contents__content">
+          <h4>Twitter検索</h4>
+          <p>Twitterから天気に関するツイートを取得<br>
+          LinkWeather内で情報が不足していても大丈夫！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top__heading">
+    <h3>今の天気を共有しよう！</h3>
+    <div class="top__heading__info">
+      <div class="top-link">
+        <%= link_to tweets_path do %>
+          <i class= "<%=weather_icon%>">  Let's sharing wether!</i>
+        <% end %>
+      </div>
+      <div class="top-info-contents">
+        <div class="top-info-contents__content">
+          <h4>今の天気を発信</h4>
+          <p>今いる場所と今の天気を投稿して、みんなに教えてあげよう！<br>
+          画像も一緒に投稿できるよ！
+          綺麗な空を共有しよう☀︎<br>
+          混雑状況などもgood！</p>
+          <p class="attention">※投稿には、会員登録が必要です。</p>
+        </div>
+        <div class="top-info-contents__content">
+          <h4>投稿された情報を閲覧</h4>
+          <p>みんなが投稿した天気情報を見てみよう！<br>
+          もしかしたら天気予報とは真逆の天気かも？</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top__heading">
+    <h3>もっと使いやすくしよう！</h3>
+    <div class="top__heading__info">
+      <div class="top-link">
+        <%= link_to "新規会員登録", new_user_registration_path %>
+      </div>
+      <div class="top-info-contents">
+        <div class="top-info-contents__content">
+          <h4>情報発信</h4>
+          <p>ログインすると天気情報を投稿できるようになるよ<br>
+          あなたの投稿が誰かの役に立つ！<br>
+          天気情報以外にも、夕日や虹の写真が撮れたらみんなに自慢しちゃおう！</p>
+        </div>
+        <div class="top-info-contents__content">
+          <h4>よく行くエリアを登録</h4>
+          <p>ログインするとあなたが住んでいる場所はもちろん、<br>
+          よく行く場所も登録できるようになるよ！<br>
+          マイページからすぐに確認できるので、検索の手間が省ける！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
