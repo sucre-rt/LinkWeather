@@ -1,3 +1,5 @@
+@import "./mixin";
+
 * {
   color: #504946; 
 }
@@ -70,6 +72,27 @@
     box-shadow: 0px 0px 0px 5px #6a1917;
     &:hover {
       border-style: solid;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+  h2 {
+    font-size: 20px;
+    margin: 30px;
+  }
+  .field {
+    margin: 20px;
+  }
+  .actions {
+    margin: 20px;
+    input {
+      @include btn;
+      padding: 5px;
+      &:hover {
+        background-color: #fff799;
+      }
     }
   }
 }
