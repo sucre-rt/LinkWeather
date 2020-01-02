@@ -3,6 +3,9 @@ class Tweet < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
 
+  validates :images, length: { minimum: 0, maximum: 6 }
+  validates :text, presence: true
+
   scope :search, -> (area, date) do
     return if area.blank?
     tweet_like(area).tweet_date(date)

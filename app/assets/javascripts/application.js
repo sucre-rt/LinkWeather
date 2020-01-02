@@ -18,5 +18,5 @@
 //= require jquery.jscroll.min.js
 
 $(function(){ 
-  setTimeout("$('.flash-message').fadeOut('slow')", 1500);
+  setTimeout("$('.flash-message').fadeOut('slow')", 2000);
 })
