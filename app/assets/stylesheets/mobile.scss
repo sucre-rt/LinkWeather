@@ -1,0 +1,54 @@
+@media screen and (max-width: 479px) { 
+  header {
+    height: 100px;
+    .logo-box {
+      width: 75px;
+      height: 75px;
+      .logo-img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+    .header-right {
+      .search-box {
+        margin: 15px 20px 10px 20px;
+        .area-search {
+          height: 25px;
+          width: 200px;
+          font-size:12px;
+        }
+      }
+      .header-right-under {
+        position: relative;
+        height: 80px;
+        .header-right-under-tweet {
+          display: flex;
+          text-align: right;
+          position: absolute;
+          right: 0;
+          .tweet-box {
+            margin-right: 10px;
+            height: 30px;
+            line-height: 30px;
+          }
+        }
+        .mobile-user-menu {
+          margin-right: 20px;
+          line-height: 30px;
+        }
+        .header-right-under-user {
+          width: 100vw;
+          position: absolute;
+          bottom: 0;
+          display: flex;
+          right: 0;
+          .mypage-box {
+            width: 33.3%
+          }
+          
+        }
+      }
+    }
+  }
+  
+}
