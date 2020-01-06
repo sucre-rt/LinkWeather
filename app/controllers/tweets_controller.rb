@@ -90,7 +90,7 @@ class TweetsController < ApplicationController
   end
 
   def update_tweet_params
-    params.require(:tweet).permit(:text, images_attributes: [:image, :_destroy, :id])
+    params.require(:tweet).permit(:text, images_attributes: [:image])
   end
 
   def search_params
