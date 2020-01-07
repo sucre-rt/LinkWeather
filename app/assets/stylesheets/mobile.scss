@@ -11,10 +11,10 @@
     }
     .header-right {
       .search-box {
-        margin: 15px 20px 10px 20px;
+        margin: 10px 20px 10px 20px;
         .area-search {
-          height: 25px;
-          width: 200px;
+          height: 30px;
+          width: 250px;
           font-size:12px;
         }
       }
@@ -72,6 +72,20 @@
   
 
   .top-info-contents {
-    
+    margin: 0 auto;
+    &__content {
+      width: 80%;
+      margin: 20px;
+      h4 {
+        font-weight: bold;
+      }
+    }
+  }
+  .top__heading__info {
+    .top-link {
+      a, i {
+        text-decoration: underline;
+      }
+    }
   }
 }
