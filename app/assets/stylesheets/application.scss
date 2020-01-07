@@ -63,123 +63,6 @@ header {
         }
       }
     }
-    .header-right-under {
-      .tweet-box {
-        @include btn;
-        width: 180px;
-        border: solid #f39800;
-        background: #fef9fb;
-        a {
-          color: #f39800;
-          font-weight: bold;
-          font-size: 14px;
-          &:hover {
-            color: #fef9fb;
-          }
-        }
-        &:hover {
-          background-color: #f6ae54;
-        }
-      }
-      .header-right-under-user {
-        .mypage-box {
-          @include btn;
-          height: 40px;
-          width: 90px;
-          border: solid #bd6856;
-          line-height: 40px;
-          background: #fdede4;
-          margin: 4px 0 0 15px;
-          a {
-            color: #bd6856;
-            font-weight: bold;
-            font-size: 14px;
-            &:hover {
-              color: #fdede4;
-            }
-          }
-          &:hover {
-            background-color: #bd6856;
-          }
-        }
-        .logout-box {
-          @include btn;
-          height: 40px;
-          width: 90px;
-          border: solid #504946;
-          line-height: 40px;
-          background: #d3d6dd;
-          margin: 4px 0 0 15px;
-          a {
-            color: #504946;
-            font-weight: bold;
-            font-size: 14px;
-            &:hover {
-              color: #fef9fb;
-            }
-          }
-          &:hover {
-            background-color: #504946;
-          }
-        }
-        .setting-box{
-          height: 50px;
-          width: 50px;
-          margin: 0 25px 0 20px;
-          position: relative;
-          .setting-btn {
-            .fa-cog {
-              font-size: 55px;
-              position: absolute;
-              top: 50%;
-              left: 0;
-              transform: translateY(-50%);
-              color: #d3d6dd;
-            }
-            p {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              text-align: center;
-              width: 100%;
-              color: #24140e;
-            }
-            &:hover {
-              .fa-cog {
-                color: #736d71;
-              }
-              p {
-                color: #000000;
-              }
-            }
-          }
-        }
-        .session-box {
-          margin-right: 20px;
-          .login-box, .signup-box {
-            @include btn;
-            height: 40px;
-            width: 90px;
-            border: solid #bd6856;
-            line-height: 40px;
-            background: #fdede4;
-            margin: 4px 0 0 15px;
-            a {
-              color: #bd6856;
-              font-weight: bold;
-              font-size: 14px;
-              &:hover {
-                color: #fdede4;
-              }
-            }
-            &:hover {
-              background-color: #bd6856;
-            }
-            }
-        }
-      }
-    }
   }
 }
 
@@ -240,24 +123,132 @@ h2 {
   .search-box {
     margin: 20px 20px 10px 20px;
   }
+  .mobile-menu-label, #mobile-user-menu {
+    display: none;
+  }
   .header-right-under {
     display: flex;
     justify-content: flex-end;
     .tweet-box {
+      @include btn;
+      width: 180px;
+      border: solid #f39800;
+      background: #fef9fb;
       height: 40px;
       line-height: 40px;
       box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+      a {
+        color: #f39800;
+        font-weight: bold;
+        font-size: 14px;
+        &:hover {
+          color: #fef9fb;
+        }
+      }
       &:hover {
+        background-color: #f6ae54;
         box-shadow: none;
         margin-top: 4px;
       }
     }
-    .mobile-user-menu {
-      display: none;
-    }
     .header-right-under-user {
       display: flex;
-      
+      .mypage-box {
+        @include btn;
+        height: 40px;
+        width: 90px;
+        border: solid #bd6856;
+        line-height: 40px;
+        background: #fdede4;
+        margin: 4px 0 0 15px;
+        a {
+          color: #bd6856;
+          font-weight: bold;
+          font-size: 14px;
+          &:hover {
+            color: #fdede4;
+          }
+        }
+        &:hover {
+          background-color: #bd6856;
+        }
+      }
+      .logout-box {
+        @include btn;
+        height: 40px;
+        width: 90px;
+        border: solid #504946;
+        line-height: 40px;
+        background: #d3d6dd;
+        margin: 4px 0 0 15px;
+        a {
+          color: #504946;
+          font-weight: bold;
+          font-size: 14px;
+          &:hover {
+            color: #fef9fb;
+          }
+        }
+        &:hover {
+          background-color: #504946;
+        }
+      }
+      .setting-box{
+        height: 50px;
+        width: 50px;
+        margin: 0 25px 0 20px;
+        position: relative;
+        .setting-btn {
+          .fa-cog {
+            font-size: 55px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            color: #d3d6dd;
+          }
+          p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            color: #24140e;
+          }
+          &:hover {
+            .fa-cog {
+              color: #736d71;
+            }
+            p {
+              color: #000000;
+            }
+          }
+        }
+      }
+      .session-box {
+        margin-right: 20px;
+        .login-box, .signup-box {
+          @include btn;
+          height: 40px;
+          width: 90px;
+          border: solid #bd6856;
+          line-height: 40px;
+          background: #fdede4;
+          margin: 4px 0 0 15px;
+          a {
+            color: #bd6856;
+            font-weight: bold;
+            font-size: 14px;
+            &:hover {
+              color: #fdede4;
+            }
+          }
+          &:hover {
+            background-color: #bd6856;
+          }
+        }
+      }
     }
   }
 }

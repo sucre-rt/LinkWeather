@@ -29,41 +29,44 @@
             </div>
           <% end %>
         </div>
-        <div class="header-right-under">
+        <label for="mobile-user-menu" class="mobile-menu-label">Menu</label>
+          <input type="checkbox" id="mobile-user-menu"/>
+        <ul class="header-right-under">
           <div class="header-right-under-tweet">
             <div class="tweet-box">
-              <%= link_to "Let's sharing wether!", tweets_path %>
+              <li><%= link_to "Let's sharing wether!", tweets_path %></li>
             </div>
-            <p class="mobile-user-menu">Menu</p>
           </div>
           <div class="header-right-under-user">
             <% if user_signed_in? %>
               <div class="mypage-box">
-                <%= link_to "my page", mypage_path(current_user) %>
+                <li><%= link_to "my page", mypage_path(current_user) %></li>
               </div>
               <div class="logout-box">
-                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+                <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
               </div>
               <div class="setting-box">
                 <div class="setting-btn">
-                  <%= link_to profile_edit_path do %>
-                    <i class="fa fa-cog"></i>
-                    <p>設定</p>
-                  <% end %>
+                  <li>
+                    <%= link_to profile_edit_path do %>
+                      <i class="fa fa-cog"></i>
+                      <p>設定</p>
+                    <% end %>
+                  </li>
                 </div>
               </div>
             <% else%>
               <div class="session-box">
                 <div class="login-box">
-                  <%= link_to "login", new_user_session_path %>
+                  <li><%= link_to "login", new_user_session_path %></li>
                 </div>
                 <div class="signup-box">
-                  <%= link_to "signup", new_user_registration_path %>
+                  <li><%= link_to "signup", new_user_registration_path %></li>
                 </div>
               </div>
             <% end %>
           </div>
-        </div>
+        </ul>
       </div>
     </header>
     <%= render 'layouts/flash' %>
