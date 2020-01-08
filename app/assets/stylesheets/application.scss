@@ -38,6 +38,7 @@ header {
       .area-search {
         color: #504946;
         border-radius: 5px;
+        padding-left: 10px;
         &::placeholder {
           color: #b4aeb1;
         }
@@ -68,7 +69,6 @@ header {
 
 .flash-message {
   position: absolute;
-  top: 130px;
   z-index: 5;
   height: 30px;
   width: 100%;
@@ -114,6 +114,9 @@ h2 {
 @media screen and (min-width: 480px) {
   header {
     height: 130px;
+  }
+  .flash-message {
+    top: 130px;
   }
   .area-search {
     height: 35px;
