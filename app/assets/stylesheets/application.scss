@@ -1,17 +1,17 @@
 @import "./reset";
 @import "font-awesome";
+@import "./color";
+@import "./mixin";
+@import "./mobile";
 @import "./weathers";
 @import "./users";
 @import "./tweets";
-@import "./mixin";
 @import "./sub_areas";
-@import "./color";
 @import "./top_page";
 
 
 header {
   width: 100vw;
-  height: 130px;
   position: relative;
   background: image-url('sky.jpg');
   background-size: cover;
@@ -33,15 +33,12 @@ header {
     position: absolute;
     right: 0;
     .search-box {
-      margin: 20px 20px 10px 20px;
       position: relative;
       text-align: right;
       .area-search {
-        height: 35px;
-        width: 300px;
         color: #504946;
-        font-size: 18px;
         border-radius: 5px;
+        padding-left: 10px;
         &::placeholder {
           color: #b4aeb1;
         }
@@ -67,31 +64,98 @@ header {
         }
       }
     }
-    .header-right-under {
-      display: flex;
-      justify-content: flex-end;
-      .tweet-box {
-        @include btn;
-        height: 40px;
-        width: 180px;
-        border: solid #f39800;
-        line-height: 40px;
-        background: #fef9fb;
-        box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
-        a {
-          color: #f39800;
-          font-weight: bold;
-          font-size: 14px;
-          &:hover {
-            color: #fef9fb;
-          }
-        }
+  }
+}
+
+.flash-message {
+  position: absolute;
+  z-index: 5;
+  height: 30px;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  .notice {
+    background-color: $notice_orange;
+    color: #504946;
+    text-align: center;
+  }
+  .alert {
+    background-color: $alert_red;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+footer {
+  clear: both;
+  width: 100vw;
+  height:100px;
+  background: image-url('sky.jpg');
+  background-size: cover;
+  position: relative;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+@media screen and (min-width: 480px) {
+  header {
+    height: 130px;
+  }
+  .flash-message {
+    top: 130px;
+  }
+  .area-search {
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+  }
+  .search-box {
+    margin: 20px 20px 10px 20px;
+  }
+  .mobile-menu-label, #mobile-user-menu {
+    display: none;
+  }
+  .header-right-under {
+    display: flex;
+    justify-content: flex-end;
+    .tweet-box {
+      @include btn;
+      width: 180px;
+      border: solid #f39800;
+      background: #fef9fb;
+      height: 40px;
+      line-height: 40px;
+      box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+      a {
+        color: #f39800;
+        font-weight: bold;
+        font-size: 14px;
         &:hover {
-          background-color: #f6ae54;
-          box-shadow: none;
-          margin-top: 4px;
+          color: #fef9fb;
         }
       }
+      &:hover {
+        background-color: #f6ae54;
+        box-shadow: none;
+        margin-top: 4px;
+      }
+    }
+    .header-right-under-user {
+      display: flex;
       .mypage-box {
         @include btn;
         height: 40px;
@@ -186,51 +250,8 @@ header {
           &:hover {
             background-color: #bd6856;
           }
-          }
+        }
       }
     }
   }
-}
-
-.flash-message {
-  position: absolute;
-  top: 130px;
-  z-index: 5;
-  height: 30px;
-  width: 100%;
-  font-size: 14px;
-  text-align: center;
-  line-height: 30px;
-  font-weight: bold;
-  .notice {
-    background-color: $notice_orange;
-    color: #504946;
-    text-align: center;
-  }
-  .alert {
-    background-color: $alert_red;
-    color: #fff;
-    text-align: center;
-  }
-}
-
-footer {
-  clear: both;
-  width: 100vw;
-  height:100px;
-  background: image-url('sky.jpg');
-  background-size: cover;
-  position: relative;
-  img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-  }
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 20px;
 }

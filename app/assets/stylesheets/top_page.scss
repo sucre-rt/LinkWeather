@@ -53,16 +53,12 @@
         }
       }
       .top-info-contents {
-        display: flex;
         width: 100%;
         justify-content: center;
         &__content {
-          width: 30%;
           background-color: #ffffb7;
-          margin: 20px 10px;
           padding: 15px;
           h4 {
-            text-decoration: underline;
             font-size: 20px;
             margin-bottom: 20px;
           }
@@ -78,15 +74,32 @@
       .top-link {
         margin: 30px 0;
         .fa, a {
-          text-decoration: none;
           font-size: 30px;
           font-weight: bold;
           color: #ff7f7f;
-          &:hover {
-            text-decoration: underline;
-            color: #ffa3a3;
-          }
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .top-info-contents {
+    display: flex;
+    &__content {
+      width: 30%;
+      margin: 20px 10px;
+      h4 {
+        text-decoration: underline;
+      }
+    }
+  }
+  .top-link {
+    .fa, a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        color: #ffa3a3;
       }
     }
   }

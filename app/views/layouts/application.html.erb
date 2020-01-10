@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://platform.twitter.com/widgets.js', charset: 'utf-8', async: 'async' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
   </head>
 
   <body>
@@ -28,36 +29,44 @@
             </div>
           <% end %>
         </div>
-        <div class="header-right-under">
-          <div class="tweet-box">
-            <%= link_to "Let's sharing wether!", tweets_path %>
+        <label for="mobile-user-menu" class="mobile-menu-label">Menu</label>
+          <input type="checkbox" id="mobile-user-menu"/>
+        <ul class="header-right-under">
+          <div class="header-right-under-tweet">
+            <div class="tweet-box">
+              <li><%= link_to "Let's sharing wether!", tweets_path %></li>
+            </div>
           </div>
-          <% if user_signed_in? %>
-            <div class="mypage-box">
-              <%= link_to "my page", mypage_path(current_user) %>
-            </div>
-            <div class="logout-box">
-              <%= link_to "logout", destroy_user_session_path, method: :delete %>
-            </div>
-            <div class="setting-box">
-              <div class="setting-btn">
-                <%= link_to profile_edit_path do %>
-                  <i class="fa fa-cog"></i>
-                  <p>設定</p>
-                <% end %>
+          <div class="header-right-under-user">
+            <% if user_signed_in? %>
+              <div class="mypage-box">
+                <li><%= link_to "my page", mypage_path(current_user) %></li>
               </div>
-            </div>
-          <% else%>
-            <div class="session-box">
-              <div class="login-box">
-                <%= link_to "login", new_user_session_path %>
+              <div class="logout-box">
+                <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
               </div>
-              <div class="signup-box">
-                <%= link_to "signup", new_user_registration_path %>
+              <div class="setting-box">
+                <div class="setting-btn">
+                  <li>
+                    <%= link_to profile_edit_path do %>
+                      <i class="fa fa-cog"></i>
+                      <p>設定</p>
+                    <% end %>
+                  </li>
+                </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+            <% else%>
+              <div class="session-box">
+                <div class="login-box">
+                  <li><%= link_to "login", new_user_session_path %></li>
+                </div>
+                <div class="signup-box">
+                  <li><%= link_to "signup", new_user_registration_path %></li>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </ul>
       </div>
     </header>
     <%= render 'layouts/flash' %>
