@@ -11,7 +11,6 @@
 }
 
 .profile-box {
-  margin: 0 25%;
   .image-area {
     width: 100%;
     .image-box {
@@ -58,6 +57,7 @@
 .btn-box {
   width: 100%;
   text-align: center;
+  margin-bottom: 2em;
   .submit-btn {
     display: inline-block;
     max-width: 100px;
@@ -94,5 +94,11 @@
         background-color: #fff799;
       }
     }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .profile-box {
+    margin: 0 25%;
   }
 }

@@ -13,21 +13,22 @@
       text-align: center;
       display: flex;
       position: relative;
+      box-sizing: border-box;
       .main-left {
-        width: 33%;
+        width: 35%;
         .discomfort {
           font-size: 45px;
         }
       }
       .main-center {
-        width: 34%;
+        width: 30%;
         .now-icon {
           height: 150px;
           width: 150px;
         }
       }
       .main-right {
-        width: 33%;
+        width: 35%;
       }
     }
   
