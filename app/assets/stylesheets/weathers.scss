@@ -3,11 +3,8 @@
 .main {
   background-color: #fffff9;
   min-height: calc(100vh - 230px);
-  overflow: auto;
+  overflow: hidden;
   .city-weather {
-    float: left;
-    width: 60%; 
-    margin: 20px;
     .forecast-title {
       text-align: center;
     }
@@ -15,7 +12,6 @@
       width: 100%;
       text-align: center;
       display: flex;
-      padding: 20px 10px;
       position: relative;
       .main-left {
         width: 33%;
@@ -34,19 +30,17 @@
         width: 33%;
       }
     }
-    
+  
     .weather-box {
-      width: 93%;
       overflow-x: auto;
       white-space: nowrap;
-      margin: 1em 10px;
-      padding: 1em;
       background-color: #fff8e1;
       border: dashed 3px $point-color;
       box-shadow: 0 0 0 10px #fff8e1;
       border-radius: 5px;
+      padding: 1em;
+      box-sizing: border-box;
       &__time-box {
-        width:30%;
         display:inline-block;
         text-align: center;
         vertical-align: top;
@@ -59,9 +53,6 @@
     }    
   }
   .right-top {
-    width: 30%;
-    float: left;
-    margin: 20px;
     .tweet-result {
       width: 100%;
       max-height: 400px;
@@ -78,9 +69,6 @@
     }
   }
   .right-under {
-    width: 30%;
-    float: left;
-    margin: 20px;
     .twitter {
       width: 100%;
       max-height: 400px;
@@ -99,5 +87,27 @@
 }
 
 @media screen and (min-width: 480px) {
-  
+  .city-weather {
+    float: left;
+    width: 60%; 
+    margin: 20px;
+    .now-weather-information {
+      padding: 20px 10px;
+    }
+    .weather-box {
+      width: 93%;
+      margin: 1em 10px;
+    }
+  }
+  .right-top {
+    width: 30%;
+    float: left;
+    margin: 20px;
+  }
+  .right-under {
+    width: 30%;
+    float: left;
+    margin: 20px;
+  }
+
 }

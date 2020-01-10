@@ -20,7 +20,7 @@
               <p>※画像ファイルは1枚ずつ選択してください（最大６枚）</p>
               <div class="image-form-box">
                 <div class="image-upload" data-num="0">
-                  <%= i.file_field "images[]", multiple: true, name: "images[:image][]", class: "upload_tweet_image", id: 'upload_img_last' %>
+                  <%= i.file_field "images[]", multiple: true, name: "images[image][-1]", class: "upload_tweet_image", id: 'upload_img_last' %>
                   <%= i.hidden_field :id %>
                 </div>
               </div>

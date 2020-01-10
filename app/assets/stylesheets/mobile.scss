@@ -162,5 +162,27 @@
     }
   }
 
+  // 天気画面
+  .city-weather {
+    width: 100vw!important;
+    margin: 20px 0;
+    .now-weather-information {
+      padding: 20px 0;
+    }
+    .weather-box {
+      width: calc(100vw - 2em);
+      margin: 1em auto;
+    }
+  }
+  .right-top {
+    width: 100%!important;
+    box-sizing: border-box;
+    padding: 2em
+  }
+  .right-under {
+    width: 100%!important;
+    padding: 2em;
+    box-sizing: border-box;
+  }
 
 }
