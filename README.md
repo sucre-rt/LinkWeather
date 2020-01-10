@@ -31,6 +31,7 @@ Since information is also obtained from Twitter, sufficient information can be o
 - テキスト投稿・編集機能  
 - 複数画像の投稿・編集機能  
 - 非同期エリア登録機能  
+- スマホに対するレスポンシブ対応
 
   - View weather forecast  
   - Calculation of discomfort index  
