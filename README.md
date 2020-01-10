@@ -44,7 +44,8 @@ Since information is also obtained from Twitter, sufficient information can be o
 画像投稿機能  
 ![postimages](https://user-images.githubusercontent.com/56216409/71811943-47ce3200-30b9-11ea-95d1-e2107a994fc5.gif)  
 投稿済み画像編集機能  
-![editimages](https://user-images.githubusercontent.com/56216409/71812176-db9ffe00-30b9-11ea-9ba1-c98f38be2e6f.gif)  
+![editimages](https://user-images.githubusercontent.com/56216409/71812176-db9ffe00-30b9-11ea-9ba1-c98f38be2e6f.gif) レスポンシブ対応
+![responsive](https://user-images.githubusercontent.com/56216409/72152911-bc71db00-33ef-11ea-9d6b-3b3711cb77b1.gif)
 
 ## Intention
 室内にいてすぐに外を確認できない状態にある時、今まさに雨が降っているのかどうか確認したいと思ったことが何度もあり、リアルタイムのその場の天気がすぐにわかるサービスがあればいいなと思ったため、作成しました。 
