@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_073315) do
+ActiveRecord::Schema.define(version: 2020_01_12_074645) do
 
   create_table "images", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2019_12_19_073315) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sub_areas_on_user_id"
+  end
+
+  create_table "trusts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "valuer_id", null: false
+    t.integer "good_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["good_user_id"], name: "index_trusts_on_good_user_id"
+    t.index ["valuer_id"], name: "index_trusts_on_valuer_id"
   end
 
   create_table "tweets", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,5 +62,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_073315) do
 
   add_foreign_key "images", "tweets"
   add_foreign_key "sub_areas", "users"
+  add_foreign_key "trusts", "users", column: "good_user_id"
+  add_foreign_key "trusts", "users", column: "valuer_id"
   add_foreign_key "tweets", "users"
 end
