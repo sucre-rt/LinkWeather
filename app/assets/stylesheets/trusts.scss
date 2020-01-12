@@ -1,3 +1,42 @@
-// Place all the styles related to the trusts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.trust-btn {
+  a {
+    font-size: 10px;
+  }
+  .trust-length {
+    display: flex;
+    position: relative;
+    &:hover .trust-info {
+      display: block;
+    }
+    .trust-info {
+      display: none;
+      position: absolute;
+      font-size: 10px;
+      top: -9.5em;
+      left: 0;
+      width: 15em;
+      height: 6em;
+      z-index: 2;
+      border-radius: 10px;
+      background-color: #FFFF99;
+      padding: 1em;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        top: 8em;
+        left: 1em;
+        border: 16px solid transparent;
+        border-top: 16px solid #FFFF99;
+      }
+      &__text {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.trust-color {
+  color: #FFA500;
+}

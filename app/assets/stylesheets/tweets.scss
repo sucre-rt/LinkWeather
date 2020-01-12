@@ -8,13 +8,16 @@
 }
 .user-info {
   display: flex;
-  margin-bottom: 10px;
   img {
     margin: 3px;
   }
   p {
     margin-left: 20px;
   }
+}
+.user-info-trust {
+  margin-bottom: 10px;
+  font-size: 12px;
 }
 .tweet-form {
   width: 95%;
