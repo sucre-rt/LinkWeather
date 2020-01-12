@@ -18,4 +18,8 @@ class User < ApplicationRecord
     self.sub_areas.exists?(area: area)
   end
 
+  def already_good?(user)
+    self.valuers.exists?(good_user: user)
+  end
+
 end

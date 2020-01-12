@@ -1,0 +1,11 @@
+<% if current_user.already_good?(user) %>
+  <div class="trust-length">
+    <p>★<%= user.good_users.length %></p>
+  </div>
+  <%= link_to "トラストスターを没収", delete_trusts_path(params: { tweet_user: user.id }), method: :delete, remote: true, data: {turbolinks: false} %>
+<% else %>
+  <div class="trust-length">
+    <p>★<%= user.good_users.length %></p>
+  </div>
+  <%= link_to "トラストスターを投げる", trusts_path(params: { tweet_user: user.id }), method: :post, remote: true, data: {turbolinks: false}  %>
+<% end %>

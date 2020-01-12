@@ -31,5 +31,11 @@ Rails.application.routes.draw do
       delete :delete
     end
   end
+
+  resources :trusts, only: [:create] do
+    collection do
+      delete :delete
+    end
+  end
   
 end

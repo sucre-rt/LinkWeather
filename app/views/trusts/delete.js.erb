@@ -1,0 +1,1 @@
+$("<%= @trust_id %>").html('<%= escape_javascript(render("trusts/trust", user: @tweet_user, count: @tweet_user.good_users.length  )) %>');

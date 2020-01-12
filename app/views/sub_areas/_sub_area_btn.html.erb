@@ -1,7 +1,5 @@
-<%# c %>
-  <% if current_user.already_area?(city) %>
-    <%= link_to "削除", delete_sub_areas_path(params: { area: city }), method: :delete, remote: true, data: {turbolinks: false} %>
-  <% else %>
-    <%= link_to "登録", sub_areas_path(params: { area: city }), method: :post, remote: true, data: {turbolinks: false}  %>
-  <% end %>
-<%# </div> %>
+<% if current_user.already_area?(city) %>
+  <%= link_to "削除", delete_sub_areas_path(params: { area: city }), method: :delete, remote: true, data: {turbolinks: false} %>
+<% else %>
+  <%= link_to "登録", sub_areas_path(params: { area: city }), method: :post, remote: true, data: {turbolinks: false}  %>
+<% end %>

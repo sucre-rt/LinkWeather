@@ -10,6 +10,11 @@
       <% else %>
         <%= image_tag "#{tweet.user.image}" %>
       <% end %>
+      <% if user_signed_in? && tweet.user.id != current_user.id %>
+        <div class="trust-btn trust-link-<%= tweet.user.id %>">
+          <%= render partial: 'trusts/trust', locals: { user: tweet.user } %>
+        </div>
+      <% end %>
       <div class="tweet-info">
         <p class="tweet-name"><%= tweet.user.name %></p>
         <p class="tweet-text"><%= tweet.text %></p>
