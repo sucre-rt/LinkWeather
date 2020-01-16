@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all.order("created_at DESC").page(params[:page]).per(10)
     @tweet = Tweet.new
-    @image = @tweet.images.build
+    @tweet.images.build
   end
 
   def create

@@ -9,6 +9,7 @@
         <% end %>
         <p><%= current_user.name %></p>
       </div>
+      <p class="trust-color user-info-trust">TrustStar獲得数　★ <%= current_user.good_users.length %></p>
       <%= form_with model: @tweet, url: tweets_path, local: true do |f| %>
         <%= f.text_area :text, class: "tweet-form", placeholder: "地域名と一緒に今の天気を共有しよう！" %>
         <div class="image-form">

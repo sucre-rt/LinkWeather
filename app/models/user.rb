@@ -11,9 +11,15 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :tweets
   has_many :sub_areas
+  has_many :valuers, class_name: 'Trust', foreign_key: 'valuer_id'
+  has_many :good_users, class_name: 'Trust', foreign_key: 'good_user_id'
 
   def already_area?(area)
     self.sub_areas.exists?(area: area)
+  end
+
+  def already_good?(user)
+    self.valuers.exists?(good_user: user)
   end
 
 end
