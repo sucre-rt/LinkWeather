@@ -31,12 +31,15 @@ Since information is also obtained from Twitter, sufficient information can be o
 - テキスト投稿・編集機能  
 - 複数画像の投稿・編集機能  
 - 非同期エリア登録機能  
-- スマホに対するレスポンシブ対応
+- 非同期ユーザー間信頼度評価機能  
+- スマホに対するレスポンシブ対応  
 
   - View weather forecast  
   - Calculation of discomfort index  
   - Posting function of weather information (multiple images / text)  
   - Area registration function  
+  - Reliability evaluation function between users  
+  - Responsive design for mobile  
 
 ## Demo
 地域名検索による、天気予報・不快指数・アプリ内投稿・Twitter検索結果表示  

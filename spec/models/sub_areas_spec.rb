@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe SubArea, type: :model do
   
   describe '#create' do
-    it 'areaがあると保存できる' do
+    it 'areaとuser_idがあると保存できる' do
       expect(build(:sub_area)).to be_valid
     end
 
