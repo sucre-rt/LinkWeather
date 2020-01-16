@@ -74,5 +74,5 @@ Because I often want to check if it is raining now when I stay indoors.
   TwitterDeveloper / https://developer.twitter.com/  
 
 ## DB
-<img width="679" alt="LinkWeatherER" src="https://user-images.githubusercontent.com/56216409/71810687-43ece080-30b6-11ea-85f9-f904e8f3ee79.png">
+<img width="553" alt="LinkWeatherDB" src="https://user-images.githubusercontent.com/56216409/72520954-e1f25f00-389d-11ea-8225-f269a098e7e1.PNG">
 
