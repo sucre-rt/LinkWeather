@@ -2,15 +2,19 @@ class SubAreasController < ApplicationController
   before_action :set_variables, :move_to_login
 
   def create
-    sub_area = current_user.sub_areas.build(area: params[:area])
-    if sub_area.save
+    if @area != ""
+      sub_area = current_user.sub_areas.build(area: params[:area])
+      if sub_area.save
+      else
+        flash[:alert] = "サブエリアの登録に失敗しました"
+      end
     else
       flash[:alert] = "サブエリアの登録に失敗しました"
     end
   end
 
   def delete
-    if @area != nil
+    if @area != ""
       @sub_area = current_user.sub_areas.find_by(area: @area)
       if @sub_area.destroy
       else
@@ -18,7 +22,6 @@ class SubAreasController < ApplicationController
       end
     else
       flash[:alert] = "サブエリアの削除に失敗しました"
-      redirect_to root_path
     end
   end
 
