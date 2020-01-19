@@ -1,5 +1,5 @@
 class SubAreasController < ApplicationController
-  before_action :set_variables, :move_to_login
+  before_action :move_to_login, :set_variables
 
   def create
     if @area != ""
