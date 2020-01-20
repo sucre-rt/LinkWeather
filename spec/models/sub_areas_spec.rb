@@ -20,8 +20,17 @@ RSpec.describe SubArea, type: :model do
     end
     
     it '同じ組み合わせのレコードは重複登録できない' do
-      sub_area = create(:sub_area)
-      sub_area_2 = build(:sub_area)
+      user = create(:user)
+      sub_area = create(
+        :sub_area,
+        area: "東京都",
+        user: user
+      )
+      sub_area_2 = build(
+        :sub_area,
+        area: "東京都",
+        user: user
+      )
       sub_area_2.valid?
       expect(sub_area_2.errors[:area]).to include("はすでに存在します")
     end
