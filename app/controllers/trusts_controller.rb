@@ -23,8 +23,8 @@ class TrustsController < ApplicationController
   private
 
   def set_variables
-    @tweet_user = User.find(params[:tweet_user])
-    @trust_id = ".trust-link-#{ @tweet_user.id }"
+      @tweet_user = User.find(params[:tweet_user])
+      @trust_id = ".trust-link-#{ @tweet_user.id }"
   end
 
   def move_to_login
