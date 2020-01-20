@@ -1,20 +1,14 @@
 class TrustsController < ApplicationController
-  before_action :set_variables, :move_to_login
+  before_action :move_to_login, :set_variables
 
   def create
-    if current_user.id != @tweet_user.id
-      trust = Trust.new(
-        valuer_id:     current_user.id,
-        good_user_id:  @tweet_user.id
-      )
-      if trust.save
-      else
-        flash[:alert] = "TrustStarの登録に失敗しました"
-        redirect_to tweets_path
-      end
+    trust = Trust.new(
+      valuer_id:     current_user.id,
+      good_user_id:  @tweet_user.id
+    )
+    if trust.save
     else
       flash[:alert] = "TrustStarの登録に失敗しました"
-      redirect_to tweets_path
     end
   end
 
@@ -23,7 +17,6 @@ class TrustsController < ApplicationController
     if @trust.destroy
     else
       flash[:alert] = "TrustStarの削除に失敗しました"
-      redirect_to tweets_path
     end
   end
 

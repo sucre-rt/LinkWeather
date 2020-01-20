@@ -2,12 +2,8 @@ class SubAreasController < ApplicationController
   before_action :move_to_login, :set_variables
 
   def create
-    if @area != ""
-      sub_area = current_user.sub_areas.build(area: params[:area])
-      if sub_area.save
-      else
-        flash[:alert] = "サブエリアの登録に失敗しました"
-      end
+    sub_area = current_user.sub_areas.build(area: params[:area])
+    if sub_area.save
     else
       flash[:alert] = "サブエリアの登録に失敗しました"
     end
