@@ -40,10 +40,14 @@ class TweetsController < ApplicationController
   end
 
   def edit
+    if @tweet.user_id == current_user.id
+    else
+      redirect_to tweets_path
+    end
   end
 
   def update
-    if @tweet.update(text: update_tweet_params[:text])
+    if @tweet.user_id == current_user.id && @tweet.update(text: update_tweet_params[:text])
       # 画像の更新・追加
       unless params[:images].blank?
         unless params[:images][:image].blank?
